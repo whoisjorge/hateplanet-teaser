@@ -1,6 +1,5 @@
 # hateplanet-teaser
 
-> Front-end Web Application
 
 ## Build Setup
 

@@ -1,0 +1,69 @@
+// Set Up
+$family-primary: "Source Sans Pro", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default
+$family-code: monospace !default
+
+$body-text-color: #000 !default
+$body-background-color: #fff !default
+
+$color-primary: fuchsia !default
+
+
+::selection
+  background: $color-primary
+  color: $body-background-color
+
+// Set box-sizing globally to handle padding and border widths
+html
+  box-sizing: border-box
+*
+  box-sizing: inherit
+  &:before,
+  &:after
+    box-sizing: inherit
+
+
+// General Document
+html
+  background-color: $body-background-color
+  font-size: 62.5%
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+  min-width: 300px
+  overflow-x: hidden
+  overflow-y: scroll
+  text-rendering: optimizeLegibility
+  text-size-adjust: 100%
+
+// Default body styles
+body
+	color: $body-text-color
+	font-family: $family-primary
+	font-size: 1.6em // Currently ems cause chrome bug misinterpreting rems on body element
+	font-weight: 300
+	letter-spacing: .01em
+	line-height: 1.6
+  margin: 0;
+  padding: 0;
+
+//
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+section
+  display: block
+
+body,
+button,
+input,
+select,
+textarea
+  font-family: $family-primary
+
+code,
+pre
+  -moz-osx-font-smoothing: auto
+  -webkit-font-smoothing: auto
+  font-family: $family-code
