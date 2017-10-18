@@ -1,23 +1,7 @@
-# hateplanet-teaser
+<div align="center"><img src ="src/assets/nosotras.svg?raw=true"/></div>
 
+## Contributing
 
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 
 
@@ -26,5 +10,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 <!-- Thanks for watching! -->
 <br><br><br><br>
 <p align="center"> <sub><sup>🎩</sub></sup><br>
-  <sub><sup>&lt;/&gt; by <a href="http://www.whoisjorge.me">@whoisjorge</a></sup></sub>
+  <sub><sup><a href="http://www.whoisjorge.me">@whoisjorge</a></sup></sub>
+  <!-- <br>
+  <sub><sup>Copyright (c) 2017 <a href="https://hateplanet.es">Hate.X.Planet</a></sup></sub> -->
 </p>

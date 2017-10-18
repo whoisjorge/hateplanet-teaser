@@ -22,11 +22,7 @@ export default {
 
   data () {
     return {
-      preloading: true,
-      currentColor: {
-        name: null,
-        colors: ['#ffffff', '#ffffff']
-      }
+      preloading: true
     }
   },
 
@@ -42,7 +38,8 @@ export default {
       }, 2000)
     },
     boot () {
-      // Preload
+      // TO DO Preload
+      // ...then ()
       this.fadePreloader()
     }
   },

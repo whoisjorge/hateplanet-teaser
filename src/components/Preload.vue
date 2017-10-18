@@ -2,7 +2,7 @@
   <div class="loader" v-once>
     <div class="loader__content">
 
-      <LogoSVG />
+      <logoSVG />
 
       <p class="loader__tip">
         {{ messages | randomize }}
@@ -16,17 +16,18 @@
 
 
 <script>
-import LogoSVG from '../assets/logo.svg'
+import logoSVG from '../assets/img/logo.svg'
 
 export default {
 
   name: 'preload',
 
-  components: { LogoSVG },
+  components: { logoSVG },
 
   data () {
     return {
       messages: [
+        'Estamos trabajando en la web, pero mientras...',
         'Loading ...',
         'Frase aleatoria.'
       ]
@@ -73,9 +74,6 @@ export default {
   }
 
   & svg {
-    animation: zoomInDown;
-    animation-duration: 1s;
-    animation-fill-mode: both;
   }
 
   &__tip {
@@ -85,6 +83,7 @@ export default {
     margin-top: 30px;
     margin-bottom: 36px;
     color: #616161;
+    animation: zoomIn .75s;
   }
 
   &__spinner {
@@ -100,30 +99,13 @@ export default {
 .fade-enter, .fade-leave-to { opacity: 0 }
 
 
-@keyframes zoomOut {
+@keyframes zoomIn {
   from {
-    opacity: 1;
-  }
-  50% {
     opacity: 0;
     transform: scale3d(.3, .3, .3);
   }
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes zoomInDown {
-  from {
-    opacity: 0;
-    transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
-    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
-  }
-
-  60% {
+  50% {
     opacity: 1;
-    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
   }
 }
 
