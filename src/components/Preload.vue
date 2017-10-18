@@ -27,8 +27,8 @@ export default {
   data () {
     return {
       messages: [
-        'Estamos trabajando en la web, pero mientras...',
-        'Loading ...',
+        'Cargando ...',
+        'Enseguida estará listo ...',
         'Frase aleatoria.'
       ]
     }
@@ -91,14 +91,13 @@ export default {
   }
 }
 
-
 /**
  * Simple Vue transition to fade-out the preloader
  */
 .fade-enter-active, .fade-leave-active { transition: opacity .5s ease-out }
 .fade-enter, .fade-leave-to { opacity: 0 }
 
-
+// __tip animation
 @keyframes zoomIn {
   from {
     opacity: 0;

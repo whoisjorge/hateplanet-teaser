@@ -2,12 +2,12 @@
 transition(name="fade")
   footer(v-if="show")
     section.columns
+      //- div.column
+      //-   Instagram
+      //-   a(:href="url.instagram") Instagram
       div.column
-        Instagram
-        a(:href="url.instagram") Instagram
-      div.column
-        Etsy
-        a(:href="url.etsy") Etsy
+        //- Etsy
+        a(:href="url.etsy") - visita nuestra tienda -
 </template>
 
 
@@ -66,12 +66,12 @@ footer
         text-rendering: auto
         user-select: none
         font-weight: 800
-        font-size: 2rem
+        font-size: 1.5rem
         text-align: left
         outline: none
         cursor: pointer
         // Link style
-        color: rgba(0,0,0,.05)
+        color: rgba(0,0,0,.1)
         text-shadow: none
         text-decoration: none
         transition: text-shadow 0.666s ease-in-out, color 1.666s

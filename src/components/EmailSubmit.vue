@@ -3,9 +3,9 @@
 
       div.form-group(@click.prevent="open")
         correoSVG.c0rreo
-        input.rainbow(type="email", v-model="correo", v-if="see", placeholder="¡No te enviaremos SPAM!*", aria-describedby="eTerm")
+        input.rainbow(type="email", v-model="newUser.email", v-if="see", :placeholder="placeholder", aria-describedby="eTerm")
 
-        a(@click.prevent="avisaMe()")
+        a(@click.prevent="addUser")
           enviarSVG
         small#eTerm.form-text
           sup (*)
@@ -20,10 +20,22 @@
 
 
 <script>
+import Vue from 'vue'
+import Firebase from 'firebase'
+import VueFire from 'vuefire'
+
 import { mixin as onClickOutside } from 'vue-on-click-outside'
 
 import correoSVG from '../assets/img/correo.svg'
 import enviarSVG from '../assets/img/enviar.svg'
+
+Vue.use(VueFire)
+
+var db = Firebase.initializeApp({ databaseURL: 'https://hate-planet.firebaseio.com' }).database()
+var usersRef = db.ref('emails')
+
+/* eslint-disable no-useless-escape */
+var emailRE = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 export default {
 
@@ -33,22 +45,46 @@ export default {
 
   data () {
     return {
-      correo: '',
+      newUser: {
+        email: ''
+      },
+      placeholder: '¡No te enviaremos SPAM!*',
       see: false
     }
   },
 
   methods: {
-    avisaMe () {
-      console.log('enviando')
+    addUser () {
+      if (this.isValid) {
+        usersRef.push(this.newUser)
+        this.newUser.email = ''
+        this.placeholder = '¡Gracias por apuntarte!'
+      }
     },
     open () {
       this.see = true
     },
-
     close () {
       this.see = false
     }
+  },
+
+  computed: {
+    validation () {
+      return {
+        email: emailRE.test(this.newUser.email)
+      }
+    },
+    isValid () {
+      var validation = this.validation
+      return Object.keys(validation).every(function (key) {
+        return validation[key]
+      })
+    }
+  },
+
+  firebase: {
+    users: usersRef
   },
 
   mixins: [onClickOutside]
@@ -88,7 +124,7 @@ export default {
 input
   border: none
   position: absolute
-  top: -5px
+  top: -6px
   min-width: 200px
   height: 26px
   background: white

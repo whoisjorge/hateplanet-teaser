@@ -1,5 +1,5 @@
 dist/
-*.sketch
+sketch/
 
 # Dependencies
 node_modules/
