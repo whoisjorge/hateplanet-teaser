@@ -3,12 +3,12 @@
 
       div.form-group(@click.prevent="open")
         correoSVG.c0rreo
-        input.rainbow(type="email", v-model="newUser.email", v-if="see", :placeholder="placeholder", aria-describedby="eTerm")
+        input.rainbow(type="email", v-model="newUser.email", v-if="see", :placeholder="placeholder", :disabled="send == true", aria-describedby="eTerm")
 
         a(@click.prevent="saveEmail")
           enviarSVG
         div(v-show="this.invalid")
-          small.invalid(v-show="!validation.email === true") Introduce una dirección de correo válida.
+          small.invalid(v-show="!validation.email == true && this.send == false") Introduce una dirección de correo válida.
 
         //- It's true
         small#eTerm.form-text
@@ -54,7 +54,8 @@ export default {
       },
       placeholder: '¡No te enviaremos SPAM!*',
       see: false,
-      invalid: false
+      invalid: false,
+      send: false
     }
   },
 
@@ -65,6 +66,7 @@ export default {
         this.newUser.email = ''
         this.placeholder = '¡Gracias por tu interés!'
         this.invalid = false
+        this.send = true
       } else {
         this.invalid = true
       }
