@@ -5,16 +5,20 @@
         correoSVG.c0rreo
         input.rainbow(type="email", v-model="newUser.email", v-if="see", :placeholder="placeholder", aria-describedby="eTerm")
 
-        a(@click.prevent="addUser")
+        a(@click.prevent="saveEmail")
           enviarSVG
+        div(v-show="this.invalid")
+          small.invalid(v-show="!validation.email === true") Introduce una dirección de correo válida.
+
+        //- It's true
         small#eTerm.form-text
           sup (*)
           |  Tu correo&nbsp;
           u sólo
-          |  se utilizará para que podamos avisarte de que la web ya no está en construcción, y además te enviaremos un
+          |  lo utilizaremos para avisarte de que la web ya no está en construcción, y además te enviaremos un
           b  código
           |  con el que tendrás los
-          b  gastos de envio gratis
+          b  gastos de envío gratis
           |  en tu primera compra.
 </template>
 
@@ -39,7 +43,7 @@ var emailRE = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@(
 
 export default {
 
-  name: 'EmailSubmit',
+  name: 'Formulario',
 
   components: { correoSVG, enviarSVG },
 
@@ -49,16 +53,20 @@ export default {
         email: ''
       },
       placeholder: '¡No te enviaremos SPAM!*',
-      see: false
+      see: false,
+      invalid: false
     }
   },
 
   methods: {
-    addUser () {
+    saveEmail () {
       if (this.isValid) {
         usersRef.push(this.newUser)
         this.newUser.email = ''
-        this.placeholder = '¡Gracias por apuntarte!'
+        this.placeholder = '¡Gracias por tu interés!'
+        this.invalid = false
+      } else {
+        this.invalid = true
       }
     },
     open () {
@@ -117,9 +125,11 @@ export default {
 
 .form-text
   display: block
-  max-width: 420px
+  max-width: 405px
   color: #333
   padding: 1rem
+  b
+   font-weight: 600
 
 input
   border: none
@@ -131,12 +141,18 @@ input
   &:focus
     outline: none
 
+small.invalid
+  color: red
+
+// mhm..
+.c0rreo
+  margin-top: -13px
 </style>
 
 
-
 <style>
-/* Tweakments */
+::placeholder { text-align: center }
+:focus::placeholder { color: transparent }
 
 /*
 ** Submit SVG :hover color
@@ -153,21 +169,11 @@ a:hover path.bgsvg {
 
 
 /*
-** olé
+** N..ice?
 */
-.c0rreo {
-  margin-top: -13px
-}
-::placeholder {
-  text-align: center;
-}
-:focus::placeholder {
-  color: transparent
-}
 .rainbow:focus {
 animation:rainbow 1.250s infinite;
 }
-
 @keyframes rainbow {
   0% {color: fuchsia;}
   10% {color: #ff8000;}

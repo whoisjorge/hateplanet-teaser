@@ -1,10 +1,10 @@
-<!-- Root Component -->
 <template lang="pug">
   main#app
+
     //- Preloader
     transition(name="fade")
       template(v-if="preloading")
-        Preload
+        Preloader
     //----------------------------
 
     router-view
@@ -14,7 +14,7 @@
 
 
 <script>
-import Preload from '@/components/Preload'
+import Preloader from '@/components/Preloader'
 
 export default {
 
@@ -27,7 +27,7 @@ export default {
   },
 
   components: {
-    Preload
+    Preloader
   },
 
   methods: {
@@ -35,10 +35,10 @@ export default {
       const app = this
       setTimeout(() => {
         app.preloading = false
-      }, 2000)
+      }, 2500)
     },
     boot () {
-      // TO DO Preload
+      // To DO: Preload
       // ...then ()
       this.fadePreloader()
     }
@@ -61,13 +61,32 @@ export default {
   }
 }
 
+// Background soft lights effect
 #bgshadow{
     position: fixed;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     top: 0px;
     left: 0px;
     pointer-events: none;
     background: radial-gradient(at center center, rgba(0, 0, 0, 0) 51%, rgba(0, 0, 0, 0.1) 100%);
+}
+
+// Simple Vue transition to fade-out the preloader
+.fade-enter-active, .fade-leave-active { transition: opacity .5s ease-out }
+.fade-enter, .fade-leave-to { opacity: 0 }
+
+
+// SVG hover cutrool (Not IE compatible?)
+svg {
+  a:hover path {
+    pointer-events: bounding-box;
+  }
+	a.fb:hover path {
+    fill: #3b5998;
+  }
+	a.ig:hover path {
+    fill: #e1306c;
+  }
 }
 </style>

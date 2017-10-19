@@ -5,10 +5,9 @@
       <logoSVG />
 
       <p class="loader__tip">
-        {{ messages | randomize }}
+        <!-- {{ messages | randomize }} -->
       </p>
-
-      <!-- <div class="spinner loader__spinner"></div> -->
+      <spinner line-fg-color="#ff00ff" line-bg-color="#99999" text-fg-color="#ff00ff" size="small" :message="this.messages|randomize"></spinner>
 
     </div>
   </div>
@@ -17,19 +16,21 @@
 
 <script>
 import logoSVG from '../assets/img/logo.svg'
+import Spinner from 'vue-simple-spinner'
 
 export default {
 
   name: 'preload',
 
-  components: { logoSVG },
+  components: { logoSVG, Spinner },
 
   data () {
     return {
       messages: [
-        'Cargando ...',
-        'Enseguida estará listo ...',
-        'Frase aleatoria.'
+        'Ya casi estamos...'
+        // 'Cargando ...',
+        // 'Enseguida estará listo ...',
+        // 'Frase aleatoria.'
       ]
     }
   },
@@ -59,21 +60,13 @@ export default {
   left: 0;
   bottom: 0;
   right: 0;
+  display: flex;
   justify-content: center;
   align-items: center;
-  // display: none;
-  display: flex;
-
-    // @include respond-to(small) {
-    //   display: flex;
-    // }
 
   &__content {
     text-align: center;
     max-width: 400px;
-  }
-
-  & svg {
   }
 
   &__tip {
@@ -83,7 +76,7 @@ export default {
     margin-top: 30px;
     margin-bottom: 36px;
     color: #616161;
-    animation: zoomIn .75s;
+    // animation: zoomIn .75s;
   }
 
   &__spinner {
@@ -91,21 +84,15 @@ export default {
   }
 }
 
-/**
- * Simple Vue transition to fade-out the preloader
- */
-.fade-enter-active, .fade-leave-active { transition: opacity .5s ease-out }
-.fade-enter, .fade-leave-to { opacity: 0 }
 
 // __tip animation
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale3d(.3, .3, .3);
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
+// @keyframes zoomIn {
+//   from {
+//     opacity: 0;
+//     transform: scale3d(.3, .3, .3);
+//   }
+//   50% {
+//     opacity: 1;
+//   }
+// }
 </style>

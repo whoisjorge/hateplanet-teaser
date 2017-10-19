@@ -16,6 +16,7 @@
     "vue": "^2.5.2",
     "vue-on-click-outside": "^1.0.3",
     "vue-router": "^3.0.1",
+    "vue-simple-spinner": "^1.2.8",
     "vuefire": "^1.4.4"
   },
   "devDependencies": {

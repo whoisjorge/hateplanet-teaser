@@ -1,34 +1,33 @@
 <template lang="pug">
   div#ChicasTeaser.flex-container
+
     div.left-flex
-      txt01SVG
-      p
-      txt02SVG
+      workingSVG
 
     div.right-flex
       nosotrasSVG
-      EmailSubmit
+      Formulario
 
+      //- To DO: @click: Modal with .left-flex
       appFooter
 </template>
 
 
 <script>
-import txt01SVG from '../assets/txt01.svg'
-import txt02SVG from '../assets/txt02.svg'
-
+import workingSVG from '../assets/img/working.svg'
 import nosotrasSVG from '../assets/img/nosotras.svg'
-import EmailSubmit from '@/components/EmailSubmit'
+import Formulario from '@/components/Formulario'
+
 import appFooter from '@/components/Footer'
 
 export default {
   name: 'ChicasTeaser',
 
-  components: { txt01SVG, txt02SVG, nosotrasSVG, EmailSubmit, appFooter },
-
-  data () {
-    return {
-    }
+  components: {
+    workingSVG,
+    nosotrasSVG,
+    Formulario,
+    appFooter
   }
 
 }
@@ -48,26 +47,22 @@ export default {
   text-align: center
 
 .right-flex
-  flex: 2 0 0
+  flex: 1 0 0
   flex-direction: column
+  @media only screen and (max-width: 480)
+    margin-top: 2rem
 
 
 .left-flex
   flex: 1 0 0
-  padding-left: 80px
-  +mobile
+  // padding-left: 70px
+  @media only screen and (max-width: 900px)
     display: none
-  +tablet
-    display: none
-  p
-    font-size: 8rem
 
 
 
 
-
-
-
+// !not
 .flex-center-mobile
   min-height: 100vh
   display: flex
@@ -75,5 +70,4 @@ export default {
   align-items: center
   text-align: center
   flex-direction: column
-
 </style>
