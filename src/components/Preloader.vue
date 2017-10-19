@@ -26,7 +26,7 @@ export default {
   data () {
     return {
       messages: [
-        '¡Ya casi estamos!'
+        '¡Ya casi está listo!'
         // 'Cargando ...',
         // 'Enseguida estará listo ...',
         // 'Frase aleatoria.'
