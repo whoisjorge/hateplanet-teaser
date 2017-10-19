@@ -17,8 +17,7 @@
 import Preloader from '@/components/Preloader'
 
 export default {
-
-  name: 'app',
+  name: 'App',
 
   data () {
     return {
@@ -35,7 +34,7 @@ export default {
       const app = this
       setTimeout(() => {
         app.preloading = false
-      }, 2500)
+      }, 1500)
     },
     boot () {
       // To DO: Preload
@@ -49,6 +48,7 @@ export default {
   }
 }
 </script>
+
 
 
 <style src="./assets/styles/main.sass" lang="sass"></style>
@@ -71,10 +71,6 @@ export default {
     pointer-events: none;
     background: radial-gradient(at center center, rgba(0, 0, 0, 0) 51%, rgba(0, 0, 0, 0.1) 100%);
 }
-
-// Simple Vue transition to fade-out the preloader
-.fade-enter-active, .fade-leave-active { transition: opacity .5s ease-out }
-.fade-enter, .fade-leave-to { opacity: 0 }
 
 
 // SVG hover cutrool (Not IE compatible?)

@@ -3,16 +3,16 @@
   <br>
   <h3>Mis odios no son exigentes</h3>
   <h6>...and sometimes the &lt;/&gt; neither.</h6>
-  <br>
-  ✨ <b><a href="https://hateplanet.es"><small><i> Entrar / Enter </i></small></a> </b> ✨
+  <br> 🎊 <br>
+  ✨ <b><a href="https://hateplanet.es"><small><i> Visit website </i></small></a> </b> ✨
 </div>
-
 <br>
 
-## Teaser
+## Intro
 
-[ ... ]  💻
+> A pre-alpha beta (epsilon) teaser Front-end app made with: Vue / Webpack / Firebase 💻
 
+<br>
 
 ## Install
 
@@ -29,9 +29,14 @@ npm install
 npm start
 ```
 
+
 ## Contributing
 
-Feel free to dive in! [Open an issue](https://github.com/whoisjorge/hateplanet-teaser/issues/new) or submit PRs are very welcome!
+Feel free to dive in, all your contributions are always welcome! [Open an issue](https://github.com/whoisjorge/hateplanet-teaser/issues/new) or submit PRs. Don't be afraid to do whatever as they come to mind 👌
+
+
+
+
 
 
 

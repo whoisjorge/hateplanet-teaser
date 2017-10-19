@@ -1,34 +1,33 @@
-<template id="modal-template">
-  <transition name="modal">
-    <div class="modal-mask">
-      <div class="modal-wrapper">
-
-          <workingSVG/>
-          <a class="close" @click="$emit('close')">X<br>Cerrar<br>X</a>
-
-      </div>
-    </div>
-  </transition>
+<template lang="pug">
+  transition(name="modal")
+    div.modal-mask
+      main.modal-wrapper
+        //- Close
+        a.close(@click="$emit('close')")
+          CloseSVG
+        //- Message
+        workingSVG
 </template>
 
 
 
 <script>
 import workingSVG from '../assets/img/working.svg'
+import CloseSVG from '../assets/img/close.svg'
 
 export default {
   name: 'Modal',
 
   components: {
-    workingSVG
+    workingSVG, CloseSVG
   }
 
 }
 </script>
 
 
-<style lang="sass" scoped>
 
+<style lang="sass" scoped>
 .modal-mask
   position: fixed
   z-index: 9997
@@ -51,8 +50,8 @@ export default {
   cursor: pointer
   display: block
   position: fixed
-  top: 0
-  right: 1rem
+  top: 1rem
+  right: 1.5rem
   &:focus
     display: none
 
@@ -73,5 +72,4 @@ export default {
 .modal-leave-active .modal-container
   -webkit-transform: scale(1.1)
   transform: scale(1.1)
-
 </style>

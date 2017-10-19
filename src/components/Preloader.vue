@@ -19,8 +19,7 @@ import logoSVG from '../assets/img/logo.svg'
 import Spinner from 'vue-simple-spinner'
 
 export default {
-
-  name: 'preload',
+  name: 'Preloader',
 
   components: { logoSVG, Spinner },
 
@@ -47,19 +46,18 @@ export default {
 </script>
 
 
+
 <style lang="scss" scoped>
 @import '../assets/styles/_mixins';
 
 .loader {
-  position: absolute;
+  position: fixed;
   z-index: 666;
   background-color: #fff;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,7 +72,7 @@ export default {
     font-size: 19px;
     line-height: 1.4;
     margin-top: 30px;
-    margin-bottom: 36px;
+    margin-bottom: 66px;
     color: #616161;
     // animation: zoomIn .75s;
   }
@@ -95,4 +93,8 @@ export default {
 //     opacity: 1;
 //   }
 // }
+
+// Simple Vue transition to fade-out the preloader
+.fade-enter-active, .fade-leave-active { transition: opacity .6s ease-out }
+.fade-enter, .fade-leave-to { opacity: 0 }
 </style>

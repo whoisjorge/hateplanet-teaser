@@ -9,8 +9,10 @@
           enviarSVG
         div(v-show="this.invalid")
           small.invalid(v-show="!validation.email == true && this.send == false") Introduce una dirección de correo válida.
+        div(v-show="!this.invalid")
+          small.valid(v-show="this.send == true") Enviado correctamente.
 
-        //- It's true
+        //-
         small#eTerm.form-text
           sup (*)
           |  Tu correo&nbsp;
@@ -21,6 +23,7 @@
           b  gastos de envío gratis
           |  en tu primera compra.
 </template>
+
 
 
 <script>
@@ -42,7 +45,6 @@ var usersRef = db.ref('emails')
 var emailRE = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 export default {
-
   name: 'Formulario',
 
   components: { correoSVG, enviarSVG },
@@ -103,8 +105,8 @@ export default {
 </script>
 
 
-<style lang="sass" scoped>
 
+<style lang="sass" scoped>
 .flex-center
   min-height: 100vh
   display: flex
@@ -144,12 +146,20 @@ input
     outline: none
 
 small.invalid
-  color: red
+  color: #f04124
+small.valid
+  color: #41b883
 
 // mhm..
 .c0rreo
   margin-top: -13px
 </style>
+
+
+
+
+
+
 
 
 <style>

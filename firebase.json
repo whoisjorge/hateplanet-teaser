@@ -17,7 +17,7 @@
       "source" : "**/*.@(css|js)",
       "headers" : [ {
         "key" : "Access-Control-Allow-Origin",
-        "value" : "*"
+        "value" : "max-age=172800"
       } ]
     } ]
   }
