@@ -13,10 +13,9 @@
       }
     ],
     // Sets the cache header
-    "headers": [
-      {
-        "source" : "**/*.@(css|js)",
-        "headers" : [ {
+    "headers": [ {
+      "source" : "**/*.@(css|js)",
+      "headers" : [ {
           "key" : "Access-Control-Allow-Origin",
           "value" : "max-age=172800"
         } ]

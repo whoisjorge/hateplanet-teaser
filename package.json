@@ -9,7 +9,8 @@
     "start": "npm run dev",
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src",
-    "clean": "rimraf dist/ package-lock.json yarn.lock"
+    "clean": "rimraf dist/ package-lock.json yarn.lock",
+    "deploy": "firebase deploy"
   },
   "dependencies": {
     "firebase": "^4.5.2",
