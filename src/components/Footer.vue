@@ -6,8 +6,9 @@
 </template>
 
 
+
 <script>
-import helpSVG from '../assets/img/help.svg'
+import helpSVG from '@/assets/img/bottle.svg'
 import Modal from '@/components/Modal'
 
 export default {
@@ -23,6 +24,7 @@ export default {
 </script>
 
 
+
 <style lang="sass" scoped>
 footer
   text-align: center
@@ -33,6 +35,7 @@ footer
     @media only screen and (min-width: 901px)
       display: none
 
+// Animation
 @keyframes bottle
   0%, 100%
     transform: translateY(0)

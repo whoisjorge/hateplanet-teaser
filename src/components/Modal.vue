@@ -12,8 +12,8 @@
 
 
 <script>
-import workingSVG from '../assets/img/working.svg'
-import CloseSVG from '../assets/img/close.svg'
+import workingSVG from '@/assets/img/working.svg'
+import CloseSVG from '@/assets/img/close.svg'
 
 export default {
   name: 'Modal',

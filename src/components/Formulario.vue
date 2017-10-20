@@ -33,8 +33,8 @@ import VueFire from 'vuefire'
 
 import { mixin as onClickOutside } from 'vue-on-click-outside'
 
-import correoSVG from '../assets/img/correo.svg'
-import enviarSVG from '../assets/img/enviar.svg'
+import correoSVG from '@/assets/img/correo.svg'
+import enviarSVG from '@/assets/img/enviar.svg'
 
 Vue.use(VueFire)
 

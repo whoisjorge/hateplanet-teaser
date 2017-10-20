@@ -13,9 +13,10 @@
 </template>
 
 
+
 <script>
-import workingSVG from '../assets/img/working.svg'
-import nosotrasSVG from '../assets/img/nosotras.svg'
+import workingSVG from '@/assets/img/working.svg'
+import nosotrasSVG from '@/assets/img/nosotras.svg'
 import Formulario from '@/components/Formulario'
 
 import appFooter from '@/components/Footer'
@@ -32,6 +33,7 @@ export default {
 
 }
 </script>
+
 
 
 <style lang="sass" scoped>

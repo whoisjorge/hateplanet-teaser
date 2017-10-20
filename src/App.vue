@@ -13,6 +13,7 @@
 </template>
 
 
+
 <script>
 import Preloader from '@/components/Preloader'
 
@@ -73,7 +74,7 @@ export default {
 }
 
 
-// SVG hover cutrool (Not IE compatible?)
+// SVG hover ... (Not IE compatible?)
 svg {
   a:hover path {
     pointer-events: bounding-box;

@@ -14,8 +14,9 @@
 </template>
 
 
+
 <script>
-import logoSVG from '../assets/img/logo.svg'
+import logoSVG from '@/assets/img/logo.svg'
 import Spinner from 'vue-simple-spinner'
 
 export default {
@@ -26,7 +27,7 @@ export default {
   data () {
     return {
       messages: [
-        '¡Ya casi está listo!'
+        // '¡Ya casi está listo!'
         // 'Cargando ...',
         // 'Enseguida estará listo ...',
         // 'Frase aleatoria.'
