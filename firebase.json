@@ -16,7 +16,7 @@
       "source" : "**/*.@(css|js)",
       "headers" : [ {
           "key" : "Cache-Control",
-          "value" : "max-age=172800"
+          "value" : "max-age=2628000"
         } ]
       }
     ]
