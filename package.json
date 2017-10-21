@@ -1,7 +1,7 @@
 {
   "name": "hateplanet-teaser",
-  "version": "1.0.0",
-  "description": "Hate Planet Teaser",
+  "version": "1.0.1",
+  "description": "Hate X Planet Teaser Front-end Web Application",
   "author": "Jorge Moliner <email@whoisjorge.me>",
   "private": true,
   "scripts": {

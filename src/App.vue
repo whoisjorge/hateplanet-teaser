@@ -1,7 +1,7 @@
 <template lang="pug">
   main#app
 
-    //- Preloader
+    //- "Pre"loader...
     transition(name="fade")
       template(v-if="preloading")
         Preloader
@@ -70,14 +70,18 @@ export default {
     top: 0px;
     left: 0px;
     pointer-events: none;
-    background: radial-gradient(at center center, rgba(0, 0, 0, 0) 51%, rgba(0, 0, 0, 0.1) 100%);
+    background: radial-gradient(at center center, rgba(0, 0, 0, 0) 51%, rgba(0, 0, 0, 0.025) 100%);
 }
 
 
 // SVG hover ... (Not IE compatible?)
+// Weird but works
 svg {
   a:hover path {
     pointer-events: bounding-box;
+  }
+  a.fb, a.ig {
+    cursor: crosshair
   }
 	a.fb:hover path {
     fill: #3b5998;

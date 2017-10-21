@@ -8,7 +8,7 @@
       nosotrasSVG
       Formulario
 
-      //- To DO: @click: Modal with .left-flex
+      //-
       appFooter
 </template>
 
@@ -16,7 +16,7 @@
 
 <script>
 import workingSVG from '@/assets/img/working.svg'
-import nosotrasSVG from '@/assets/img/nosotras.svg'
+import nosotrasSVG from '@/assets/img/chicash.svg'
 import Formulario from '@/components/Formulario'
 
 import appFooter from '@/components/Footer'

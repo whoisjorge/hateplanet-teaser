@@ -1,8 +1,8 @@
 <template lang="pug">
   footer
-    a(id="show-modal", @click="showModal = true")
+    a(id="show-modal", @click="showModal = !showModal")
       helpSVG
-    Modal(v-if="showModal", @close="showModal = false")
+    Modal(v-if="showModal", @close="showModal = !showModal")
 </template>
 
 
@@ -30,7 +30,6 @@ footer
   text-align: center
   margin: 1rem 0 0 0
   svg
-    width: 18px
     animation: bottle 1200ms ease-in-out infinite
     @media only screen and (min-width: 901px)
       display: none

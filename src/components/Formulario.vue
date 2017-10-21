@@ -2,7 +2,7 @@
   form(v-on-click-outside="close")
 
       div.form-group(@click.prevent="open")
-        correoSVG.c0rreo
+        correoSVG
         input.rainbow(type="email", v-model="newUser.email", v-if="see", :placeholder="placeholder", :disabled="send == true", aria-describedby="eTerm")
 
         a(@click.prevent="saveEmail")
@@ -12,7 +12,7 @@
         div(v-show="!this.invalid")
           small.valid(v-show="this.send == true") Enviado correctamente.
 
-        //-
+        //- eTerm
         small#eTerm.form-text
           sup (*)
           |  Tu correo&nbsp;
@@ -122,6 +122,8 @@ export default {
   align-items: center
   text-align: center
   flex-direction: column
+  > svg
+    margin-top: -13px
 
 .form-control
   display: flex
@@ -149,15 +151,7 @@ small.invalid
   color: #f04124
 small.valid
   color: #41b883
-
-// mhm..
-.c0rreo
-  margin-top: -13px
 </style>
-
-
-
-
 
 
 
@@ -170,9 +164,9 @@ small.valid
 ** Submit SVG :hover color
 */
 a svg {
-  cursor: pointer
+  cursor: pointer;
 }
-a path {
+a path.bgsvg {
     transition: fill .6s ease;
 }
 a:hover path.bgsvg {
