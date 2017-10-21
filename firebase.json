@@ -6,17 +6,32 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    // "redirects": [
+    //   {
+    //     "source" : "http://hateplanet.es",
+    //     "destination" : "http://www.hateplanet.es",
+    //     "type" : 301
+    //   }
+    // ],
     "rewrites": [
       {
         "source": "**",
         "destination": "/index.html"
       }
     ],
-    "headers": [ {
-      "source" : "**/*.@(css|js)",
-      "headers" : [ {
+    "headers": [
+      {
+        "source" : "**/*.@(css|js)",
+        "headers" : [ {
           "key" : "Cache-Control",
           "value" : "max-age=2628000"
+        } ]
+      },
+      {
+        "source" : "**/*.@(jpg|jpeg|gif|png|ico)",
+        "headers" : [ {
+          "key" : "Cache-Control",
+          "value" : "max-age=31536000"
         } ]
       }
     ]
