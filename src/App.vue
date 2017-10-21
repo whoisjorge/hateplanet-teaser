@@ -81,7 +81,7 @@ export default {
   width: 100%;
   height: 100%;
   z-index: -999;
-  background-image: url('./assets/img/bg.jpg');
+  background-image: url('./assets/img/bg.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
