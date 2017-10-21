@@ -9,7 +9,7 @@
 
     router-view
 
-    div#bgshadow
+    div#background
 </template>
 
 
@@ -71,6 +71,22 @@ export default {
     left: 0px;
     pointer-events: none;
     background: radial-gradient(at center center, rgba(0, 0, 0, 0) 51%, rgba(0, 0, 0, 0.025) 100%);
+}
+
+// App Background
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -999;
+  background-image: url('./assets/img/bg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  opacity: .27;
+  filter: alpha(opacity=27);
 }
 
 

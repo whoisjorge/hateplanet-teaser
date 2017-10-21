@@ -51,9 +51,8 @@ export default {
 .right-flex
   flex: 1 0 0
   flex-direction: column
-  @media only screen and (max-width: 480)
+  @media only screen and (max-width: 480px)
     margin-top: 2rem
-
 
 .left-flex
   flex: 1 0 0

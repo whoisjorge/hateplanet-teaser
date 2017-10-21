@@ -146,6 +146,11 @@ input
   background: white
   &:focus
     outline: none
+  /* IE 10+ fix position */
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+    margin: 0 auto
+    left: 0px
+    right: 0px
 
 small.invalid
   color: #f04124
