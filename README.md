@@ -4,15 +4,14 @@
   <h3>Mis odios no son exigentes</h3>
   <h6>...and sometimes the &lt;/&gt; neither.</h6>
   <br> 🎊 <br>
-  ✨ <b><a href="https://hateplanet.es"><small><i> Visit website </i></small></a> </b> ✨
+  ✨ <b><a href="https://hateplanet.es"><small><i> Visit teaser website </i></small></a> </b> ✨
 </div>
+
 <br>
 
 ## Intro
 
-> A pre-alpha beta (epsilon) teaser Front-end app made with: Vue / Webpack / Firebase 💻
-
-<br>
+> Vue / Webpack / Firebase / 💻
 
 ## Install
 
@@ -28,7 +27,6 @@ npm install
 # Serve with hot reload at localhost:8080
 npm start
 ```
-
 
 ## Contributing
 
