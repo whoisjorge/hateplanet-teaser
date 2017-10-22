@@ -2,7 +2,6 @@
   <img src ="static/social.png"/>
   <br>
   <h3>Mis odios no son exigentes</h3>
-  <h6>...and sometimes the &lt;/&gt; neither.</h6>
   <br> 🎊 <br>
   ✨ <b><a href="https://hateplanet.es"><small><i> Visit teaser website </i></small></a> </b> ✨
 </div>
@@ -12,6 +11,9 @@
 ## Intro
 
 > Vue / Webpack / Firebase / 💻
+
+![100 Scored](.github/100-page-speed.png "100 Google Page Speed")
+
 
 ## Install
 
