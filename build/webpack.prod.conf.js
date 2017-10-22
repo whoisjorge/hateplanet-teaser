@@ -11,6 +11,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 var PreloadWebpackPlugin = require('preload-webpack-plugin')
 var ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
+var HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
+var PrerenderSpaPlugin = require('prerender-spa-plugin')
 
 const env = config.build.env
 
@@ -28,6 +30,13 @@ const webpackConfig = merge(baseWebpackConfig, {
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
   plugins: [
+    // https://www.npmjs.com/package/prerender-spa-plugin
+    new PrerenderSpaPlugin(
+      // Absolute path to compiled SPA
+      path.join(__dirname, '../dist'),
+      // List of routes to prerender
+      [ '/' ]
+    ),
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
       'process.env': env
@@ -75,8 +84,12 @@ const webpackConfig = merge(baseWebpackConfig, {
         // https://github.com/kangax/html-minifier#options-quick-reference
       },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-      chunksSortMode: 'dependency'
+      chunksSortMode: 'dependency',
+      // CSS Inline
+      inlineSource: '.(css)$'
     }),
+    // https://github.com/dustinjackson/html-webpack-inline-source-plugin
+    new HtmlWebpackInlineSourcePlugin(),
     // https://github.com/googlechrome/preload-webpack-plugin
     new PreloadWebpackPlugin({
       rel: 'preload',
