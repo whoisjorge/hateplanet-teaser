@@ -9,7 +9,7 @@
 
     router-view
 
-    div#background
+    div#bgshadow
 </template>
 
 
@@ -52,7 +52,7 @@ export default {
 
 
 
-<style src="./assets/styles/main.sass" lang="sass"></style>
+
 <style lang="scss">
 // Last minute tweaks
 #app {
@@ -77,18 +77,20 @@ export default {
 }
 
 // App Background
-#background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -999;
-  background-image: url('./assets/img/bg.png');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  opacity: .27;
-  filter: alpha(opacity=27);
-}
+// #background {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   z-index: -999;
+//   background-image: url('./assets/img/bg.png');
+//   background-repeat: no-repeat;
+//   background-attachment: fixed;
+//   background-size: cover;
+//   opacity: .27;
+//   filter: alpha(opacity=27);
+// }
+#skip a { position:absolute; left:-10000px; top:auto; width:1px;  height:1px; overflow:hidden; }
+#skip a:focus { position:static; width:auto; height:auto; }
 </style>

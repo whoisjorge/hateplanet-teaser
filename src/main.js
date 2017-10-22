@@ -1,3 +1,5 @@
+import './assets/styles/main.sass'
+
 import Vue from 'vue'
 import router from './router'
 
