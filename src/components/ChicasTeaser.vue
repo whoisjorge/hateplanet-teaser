@@ -8,7 +8,6 @@
       nosotrasSVG
       Formulario
 
-      //-
       appFooter
 </template>
 
@@ -18,7 +17,6 @@
 import workingSVG from '@/assets/img/workingSVG.svg'
 import nosotrasSVG from '@/assets/img/chicash.svg'
 import Formulario from '@/components/Formulario'
-
 import appFooter from '@/components/Footer'
 
 export default {
@@ -52,7 +50,7 @@ export default {
   flex: 1 0 0
   flex-direction: column
   @media only screen and (max-width: 480px)
-    margin-top: 2rem
+    margin-top: 3rem
 
 .left-flex
   flex: 1 0 0

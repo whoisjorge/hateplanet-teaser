@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" prefix="og: http://ogp.me/ns#">
   <head>
     <link rel="preconnect" href="//fonts.gstatic.com/" crossorigin>
 
     <title>:: Hate Planet - Teaser ::</title>
-    <meta name="description" content="Colectivo artístico Hate Planet"/>
+    <meta name="description" content="<%= htmlWebpackPlugin.options.description %>"/>
 
     <meta charset="utf-8"/>
     <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"/>
@@ -13,19 +13,19 @@
     <!--[if IE]><link rel="icon" type="image/x-icon" href="static/favicon.ico"/><![endif]-->
     <link rel="shortcut icon" href="static/favicon.png"/>
 
-    <!-- Social f/t/g+ -->
-    <meta property="og:title" content="Hate Planet"/>
-    <meta property="og:site_name" content="Hate Planet"/>
+    <!-- Social meta -->
+    <meta property="og:title" content="<%= htmlWebpackPlugin.options.title %>"/>
+    <meta property="og:site_name" content="<%= htmlWebpackPlugin.options.title %>"/>
     <meta property="og:url" content="https://hateplanet.es"/>
-    <meta property="og:description" content="Colectivo artístico Hate Planet."/>
+    <meta property="og:description" content="<%= htmlWebpackPlugin.options.description %>"/>
     <meta property="og:type" content="website"/>
     <meta property="og:image" content="https://hateplanet.es/static/social.png"/>
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name=twitter:title content="Hate Planet">
-    <meta name=twitter:description content="Colectivo artístico Hate Planet.">
+    <meta name=twitter:title content="<%= htmlWebpackPlugin.options.title %>">
+    <meta name=twitter:description content="<%= htmlWebpackPlugin.options.description %>">
     <meta name="twitter:image" content="https://hateplanet.es/static/social.png"/>
-    <meta itemprop="name" content="Hate Planet">
-    <meta itemprop="description" content="Colectivo artístico Hate Planet.">
+    <meta itemprop="name" content="<%= htmlWebpackPlugin.options.title %>">
+    <meta itemprop="description" content="<%= htmlWebpackPlugin.options.description %>">
     <meta itemprop="image" content="https://hateplanet.es/static/social.png">
     <!--
      |   .-. .-.  .  .  _______ ,  -.    ,  -.  ,-.      .  .  .-. .-.,  -. _______
@@ -37,26 +37,19 @@
      |   (__)                   (__)     (__)    (_)           (__)   (__)
      -->
     <meta name="twitter:creator" content="@whois_jorge"/>
-    <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600" rel="stylesheet"> -->
+    <!-- Google Analytics -->
+    <!-- <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-66654422-3', 'auto');
+      ga('send', 'pageview');
+    </script> -->
   </head>
   <body>
-    <noscript>
-      <style>html, a{background-color: fuchsia; color: #ddd;font-family: 'Comic Sans MS';}#noscript{text-align:center;}kbd{display: block;font-size: 70px;}p{margin: 40px 0;}ul{padding:10px 0;list-style: none;}</style>
-      <main id="noscript">
-          <kbd>🚂🚋🚋🚋</kbd>
-          <h1>OMG!</h1>
-          <p>Parece que <b><u>no</u></b> tienes activado <b>JavaScript</b> en tu navegador, por lo que no vas a poder visualizar esta página correctamente...</p>
-          <kbd>🙌</kbd>
-          <strong>Si necesitas ayuda para activarlo, pincha en el siguiente enlace dependiendo de tu navegador:</strong>
-          <ul>
-            <li><a href="https://support.google.com/adsense/answer/12654?hl=en" target="_blank">Google Chrome</a></li>
-            <li><a href="http://activatejavascript.org/en/instructions/ie" target="_blank">Internet Explorer</a></li>
-            <li><a href="http://support.ezimerchant.com/hc/en-us/articles/200836150-How-do-I-enable-cookies-and-JavaScript-in-Safari-Mac-" target="_blank">Safari</a></li>
-            <li><a href="https://support.mozilla.org/en-US/kb/javascript-settings-for-interactive-web-pages#w_enable-and-disable-javascript" target="_blank">Firefox</a></li>
-          </ul>
-      </main>
-    </noscript>
-    <!--[if lte IE 9]>Esta web no hubiese funcionado en el año 1994. Si estás en el presente es muy recomendable que <a href="http://browsehappy.com/" target="_blank">actualices tu navegador</a> para disfrutar de una mejor experiencia en Internet. Si por el contrario, estás en 1994: "¡Hola! Somos el colectivo artístico Hate Planet. Visita nuestra página web en: tres uves dobles hateplanet punto geocities punto com.<![endif]-->
+   <noscript>Necesitas activar <b>JavaScript</b> en el navegador para visualizar esta página correctamente.</noscript>
+    <!--[if lte IE 9]>Esta web no hubiese funcionado en el año 1994. Si estás en el presente es muy recomendable <a href="http://browsehappy.com/" target="_blank">actualizar el navegador</a> para disfrutar de una mejor experiencia en Internet. Si por el contrario, estás en 1994: "¡Hola! Somos el colectivo artístico Hate Planet. Visita nuestra página web en: tres uves dobles hateplanet punto geocities punto com.<![endif]-->
 
     <div id="app"></div>
     <!-- ↑ 💉 💉 💉 ↑ -->

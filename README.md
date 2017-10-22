@@ -3,16 +3,17 @@
   <br>
   <h3>Mis odios no son exigentes</h3>
   <br> 🎊 <br>
-  ✨ <b><a href="https://hateplanet.es"><small><i> Visit teaser website </i></small></a> </b> ✨
+  ✨ <b><a href="https://hateplanet.es"><small><i> Visit live teaser website</i></small></a> </b> ✨
 </div>
 
 <br>
 
 ## Intro
 
-> Vue / Webpack / Firebase / 💻
+> Vue / Webpack / Firebase / ... / 💻
 
 ![100 Scored](.github/100-page-speed.png "100 Google Page Speed")
+🚀 - https://developers.google.com/speed/pagespeed/insights/?hl=es&url=hateplanet.es
 
 
 ## Install

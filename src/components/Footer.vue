@@ -1,7 +1,6 @@
 <template lang="pug">
   footer
     a(id="show-modal", @click="showModal = !showModal")
-      //- helpSVG - png
       img(src="../assets/img/bottle.png" width="20" height="49" alt="[ ? ]")
     Modal(v-if="showModal", @close="showModal = !showModal")
 </template>
@@ -9,14 +8,12 @@
 
 
 <script>
-// import helpSVG from '@/assets/img/bottle.svg'
 import Modal from '@/components/Modal'
 
 export default {
   name: 'Footer',
 
   components: {
-    // helpSVG,
     Modal
   },
 

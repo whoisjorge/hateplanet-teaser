@@ -35,7 +35,7 @@ export default {
       const app = this
       setTimeout(() => {
         app.preloading = false
-      }, 1500)
+      }, 2500)
     },
     boot () {
       this.fadePreloader()

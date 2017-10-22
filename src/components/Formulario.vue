@@ -9,7 +9,7 @@
         a(@click.prevent="submitEmail")
           enviarSVG
 
-        //- UX from the future
+        //- very futuristic UX
         p(v-show="this.invalid")
           small.invalid(v-show="!validation.email == true && this.sent == false") Introduce una dirección de correo válida.
         p(v-show="!this.invalid")
@@ -34,14 +34,13 @@ import Firebase from 'firebase'
 import VueFire from 'vuefire'
 
 import { mixin as onClickOutside } from 'vue-on-click-outside'
-
 import correoSVG from '@/assets/img/correo.svg'
 import enviarSVG from '@/assets/img/enviar.svg'
 
 Vue.use(VueFire)
 
-var db = Firebase.initializeApp({ databaseURL: 'https://hate-planet.firebaseio.com' }).database()
-var usersRef = db.ref('emails')
+const db = Firebase.initializeApp({ databaseURL: 'https://hate-planet.firebaseio.com' }).database()
+const usersRef = db.ref('emails')
 
 /* eslint-disable no-useless-escape */
 var emailRE = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/

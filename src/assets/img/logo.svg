@@ -4,11 +4,11 @@
   </title>
   <defs>
         <linearGradient id="logo-gradient" x1="50%" y1="0%" x2="50%" y2="100%" >
-              <stop offset="0%" stop-color="#7A5FFF">
-                <animate attributeName="stop-color" values="#7A5FFF; #01FF89; #7A5FFF" dur="4s" repeatCount="indefinite"></animate>
+              <stop offset="20%" stop-color="#23A2AE">
+                <animate attributeName="stop-color" values="#23A2AE; #DB43F4; #23A2AE" dur="3s" repeatCount="indefinite"></animate>
               </stop>
-              <stop offset="100%" stop-color="#01FF89">
-                <animate attributeName="stop-color" values="#01FF89; #7A5FFF; #01FF89" dur="4s" repeatCount="indefinite"></animate>
+              <stop offset="100%" stop-color="#DB43F4">
+                <animate attributeName="stop-color" values="#DB43F4; #23A2AE; #DB43F4" dur="3s" repeatCount="indefinite"></animate>
               </stop>
           </linearGradient>
     <path fill="url('#logo-gradient')" id="path-1" d="M225.365006 74.1323796c-.490056 8.9237956-.587279 18.4756204-.936755 26.9881754 4.725815-5.3947448 10.47641-12.4094893 13.365502-15.9319711.580709-.7646715-6.445606-5.9308029-8.588448-7.9121167-.911792-.8421898-1.280976-1.2363504-3.840299-3.1440876zm18.606334 1.8670073c5.4563 4.7023357 7.103831 8.1512408 1.671181 13.559124-7.672715 9.1366424-10.484293 12.8772261-16.396488 19.9944531-2.092917 2.462189-3.959857 4.610364-6.061971 7.516642-.613554.848759-2.322835 1.734306-3.094048 1.443941-1.135142-.427007-2.454218-1.788175-2.668371-2.940438-.416481-2.248029-.212839-4.6327-.102478-6.951678.538667-11.4056938 1.380826-34.2275916 1.640962-45.6411682.045984-2.0141606-.525528-4.8849635 2.163864-5.2870073 1.764462-.2640876 3.731252 1.830219 5.207987 3.0324087l17.639362 15.2737227z"/>
