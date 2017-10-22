@@ -91,6 +91,4 @@ export default {
 //   opacity: .27;
 //   filter: alpha(opacity=27);
 // }
-#skip a { position:absolute; left:-10000px; top:auto; width:1px;  height:1px; overflow:hidden; }
-#skip a:focus { position:static; width:auto; height:auto; }
 </style>
