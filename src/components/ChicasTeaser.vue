@@ -15,7 +15,7 @@
 
 
 <script>
-import workingSVG from '@/assets/img/working.svg'
+import workingSVG from '@/assets/img/workingSVG.svg'
 import nosotrasSVG from '@/assets/img/chicash.svg'
 import Formulario from '@/components/Formulario'
 

@@ -12,7 +12,7 @@
 
 
 <script>
-import workingSVG from '@/assets/img/working.svg'
+import workingSVG from '@/assets/img/workingSVG.svg'
 import CloseSVG from '@/assets/img/close.svg'
 
 export default {

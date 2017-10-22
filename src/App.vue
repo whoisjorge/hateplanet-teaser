@@ -38,7 +38,7 @@ export default {
       }, 1500)
     },
     boot () {
-      // To DO: Preload
+      // To DO: real Preload background and logo / spinner
       // ...then ()
       this.fadePreloader()
     }
@@ -59,6 +59,9 @@ export default {
   -webkit-tap-highlight-color: transparent;
   button, img, svg {
     user-select: none
+  }
+  svg a {
+    outline: none
   }
 }
 
@@ -87,23 +90,5 @@ export default {
   background-size: cover;
   opacity: .27;
   filter: alpha(opacity=27);
-}
-
-
-// SVG hover ... (Not IE compatible?)
-// Weird but works
-svg {
-  a:hover path {
-    pointer-events: bounding-box;
-  }
-  a.fb, a.ig {
-    cursor: crosshair
-  }
-	a.fb:hover path {
-    fill: #3b5998;
-  }
-	a.ig:hover path {
-    fill: #e1306c;
-  }
 }
 </style>

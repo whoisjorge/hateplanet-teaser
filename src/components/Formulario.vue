@@ -3,23 +3,25 @@
 
       div.form-group(@click.prevent="open")
         correoSVG
-        input.rainbow(type="email", v-model="newUser.email", v-if="see", :placeholder="placeholder", :disabled="send == true", aria-describedby="eTerm")
+        input.rainbow(type="email", v-model="newUser.email", v-if="see", :placeholder="placeholder", :disabled="send == true", aria-describedby="eTerm" autofocus)
 
+      div.form-group
         a(@click.prevent="saveEmail")
           enviarSVG
-        div(v-show="this.invalid")
+
+        //- UX from the future
+        p(v-show="this.invalid")
           small.invalid(v-show="!validation.email == true && this.send == false") Introduce una dirección de correo válida.
-        div(v-show="!this.invalid")
+        p(v-show="!this.invalid")
           small.valid(v-show="this.send == true") Enviado correctamente.
 
-        //- eTerm
         small#eTerm.form-text
           sup (*)
           |  Tu correo&nbsp;
           u sólo
           |  lo utilizaremos para avisarte de que la web ya no está en construcción, y además te enviaremos un
           b  código
-          |  con el que tendrás los
+          |  para Etsy con el que tendrás los
           b  gastos de envío gratis
           |  en tu primera compra.
 </template>
@@ -77,6 +79,7 @@ export default {
       this.see = true
     },
     close () {
+      this.placeholder = ''
       this.see = false
     }
   },
@@ -107,6 +110,12 @@ export default {
 
 
 <style lang="sass" scoped>
+
+::placeholder
+  text-align: center
+
+
+
 .flex-center
   min-height: 100vh
   display: flex
@@ -124,6 +133,7 @@ export default {
   flex-direction: column
   > svg
     margin-top: -13px
+    cursor: text
 
 .form-control
   display: flex
@@ -137,6 +147,7 @@ export default {
   b
    font-weight: 600
 
+// Introduce Correo
 input
   border: none
   position: absolute
@@ -152,24 +163,27 @@ input
     left: 0px
     right: 0px
 
-small.invalid
-  color: #f04124
-small.valid
-  color: #41b883
+// Enviar
+a svg
+  cursor: pointer
+
+// Valida't
+p
+  margin: 0
+  small
+    &.invalid
+      color: #f04124
+    &.valid
+      color: #41b883
 </style>
 
 
 
 
 <style>
-::placeholder { text-align: center }
-:focus::placeholder { color: transparent }
-
-/*
-** Submit SVG :hover color
-*/
-a svg {
-  cursor: pointer;
+/* Not Tweaks */
+:focus::placeholder {
+  color: transparent
 }
 a path.bgsvg {
     transition: fill .6s ease;
@@ -177,11 +191,6 @@ a path.bgsvg {
 a:hover path.bgsvg {
   fill: fuchsia!important
 }
-
-
-/*
-** N..ice?
-*/
 .rainbow:focus {
 animation:rainbow 1.250s infinite;
 }
