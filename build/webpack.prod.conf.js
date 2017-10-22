@@ -93,7 +93,8 @@ const webpackConfig = merge(baseWebpackConfig, {
     // https://github.com/googlechrome/preload-webpack-plugin
     new PreloadWebpackPlugin({
       rel: 'preload',
-      include: 'all'
+      include: 'all',
+      fileBlacklist: [/\.map/, /\.css/]
     }),
     // https://github.com/numical/script-ext-html-webpack-plugin
     new ScriptExtHtmlWebpackPlugin({
