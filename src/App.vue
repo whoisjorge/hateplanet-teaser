@@ -1,7 +1,7 @@
 <template lang="pug">
   main#app
 
-    //- "Pre"loader...
+    //- Preloader
     transition(name="fade")
       template(v-if="preloading")
         Preloader
@@ -38,8 +38,6 @@ export default {
       }, 1500)
     },
     boot () {
-      // To DO: real Preload background and logo / spinner
-      // ...then ()
       this.fadePreloader()
     }
   },
@@ -52,9 +50,9 @@ export default {
 
 
 
-
 <style lang="scss">
 // Last minute tweaks
+
 #app {
   -webkit-tap-highlight-color: transparent;
   button, img, svg {
@@ -65,7 +63,7 @@ export default {
   }
 }
 
-// Background soft lights effect
+// Soft lights background effect
 #bgshadow{
     position: fixed;
     width: 100%;
@@ -76,7 +74,6 @@ export default {
     background: radial-gradient(at center center, rgba(0, 0, 0, 0) 51%, rgba(0, 0, 0, 0.025) 100%);
 }
 
-// App Background
 // #background {
 //   position: fixed;
 //   top: 0;
@@ -91,4 +88,22 @@ export default {
 //   opacity: .27;
 //   filter: alpha(opacity=27);
 // }
+
+
+
+
+
+/* Cutre Tween Max beta */
+.fb {
+  animation: floating 3s ease-in-out 3s infinite alternate;
+}
+.ig {
+  animation: floating 3s ease-in-out 0s infinite alternate;
+}
+.exp {
+  animation: exp 6s ease-in-out 2s infinite alternate;
+  animation-delay: 1s
+}
+@keyframes floating { from {transform: none;} to {transform: translateY(-5px);} }
+@keyframes exp { from {transform: none;} to {transform: scale3d(1.02, .98, .93);} }
 </style>

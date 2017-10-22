@@ -27,6 +27,8 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
+      title: 'Hate Planet',
+      description: 'Colectivo artístico Hate Planet. ',
       filename: 'index.html',
       template: 'index.html',
       inject: true

@@ -1,28 +1,28 @@
 <template lang="pug">
-  form(v-on-click-outside="close")
+  form(@submit.prevent="submitEmail", v-on-click-outside="close")
 
       div.form-group(@click.prevent="open")
         correoSVG
-        input.rainbow(type="email", v-model="newUser.email", v-if="see", :placeholder="placeholder", :disabled="send == true", aria-describedby="eTerm" autofocus)
+        input.rainbow(type="email", v-model="newUser.email", v-show="see", :placeholder="placeholder", :disabled="sent", aria-describedby="eTerm" autofocus)
 
       div.form-group
-        a(@click.prevent="saveEmail")
+        a(@click.prevent="submitEmail")
           enviarSVG
 
         //- UX from the future
         p(v-show="this.invalid")
-          small.invalid(v-show="!validation.email == true && this.send == false") Introduce una dirección de correo válida.
+          small.invalid(v-show="!validation.email == true && this.sent == false") Introduce una dirección de correo válida.
         p(v-show="!this.invalid")
-          small.valid(v-show="this.send == true") Enviado correctamente.
+          small.valid(v-show="this.sent == true") Enviado correctamente.
 
         small#eTerm.form-text
           sup (*)
           |  Tu correo&nbsp;
           u sólo
-          |  lo utilizaremos para avisarte de que la web ya no está en construcción, y además te enviaremos un
+          |  lo utilizaremos para avisarte cuando la web ya no esté en construcción. Y además te enviaremos un
           b  código
-          |  para Etsy con el que tendrás los
-          b  gastos de envío gratis
+          |  con el que tendrás los gastos de
+          b  envío gratis
           |  en tu primera compra.
 </template>
 
@@ -56,21 +56,21 @@ export default {
       newUser: {
         email: ''
       },
-      placeholder: '¡No te enviaremos SPAM!*',
+      placeholder: '',
       see: false,
       invalid: false,
-      send: false
+      sent: false
     }
   },
 
   methods: {
-    saveEmail () {
+    submitEmail () {
       if (this.isValid) {
         usersRef.push(this.newUser)
         this.newUser.email = ''
         this.placeholder = '¡Gracias por tu interés!'
         this.invalid = false
-        this.send = true
+        this.sent = true
       } else {
         this.invalid = true
       }
@@ -79,8 +79,8 @@ export default {
       this.see = true
     },
     close () {
-      this.placeholder = ''
       this.see = false
+      this.placeholder = '¡No te enviaremos SPAM!*'
     }
   },
 
@@ -115,7 +115,6 @@ export default {
   text-align: center
 
 
-
 .flex-center
   min-height: 100vh
   display: flex
@@ -141,7 +140,7 @@ export default {
 
 .form-text
   display: block
-  max-width: 405px
+  max-width: 370px
   color: #333
   padding: 1rem
   b
@@ -181,12 +180,12 @@ p
 
 
 <style>
-/* Not Tweaks */
+/* Not Last Minute Tweaks... */
 :focus::placeholder {
   color: transparent
 }
 a path.bgsvg {
-    transition: fill .6s ease;
+    transition: fill .666s ease;
 }
 a:hover path.bgsvg {
   fill: fuchsia!important

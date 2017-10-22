@@ -16,8 +16,8 @@ new Vue({
 })
 
 /* eslint-disable no-console, no-useless-escape */
-console.log('~ HATEPLANET.es - Mis odios no son exigentes ~')
-console.log('~ ------------------------------------------ ~')
-console.log('| ¡Gracias por visitar la consola! Si quieres |')
-console.log('|   saber más puedes encontrarme en GitHub:   |')
-console.log('{     🐲 https://github.com/whoisjorge        }')
+console.log('~ -------------------------------------------- ~')
+console.log('| ¡Gracias por visitar la consola! Si quieres  |')
+console.log('|   saber más puedes encontrarme en GitHub:    |')
+console.log('[     🐲 https://github.com/whoisjorge         ]')
+console.log('~ -------------------------------------------- ~')

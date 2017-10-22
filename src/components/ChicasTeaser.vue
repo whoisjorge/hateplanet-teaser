@@ -62,7 +62,6 @@ export default {
 
 
 
-
 // !not
 .flex-center-mobile
   min-height: 100vh

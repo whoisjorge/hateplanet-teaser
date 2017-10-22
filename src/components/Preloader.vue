@@ -1,33 +1,28 @@
-<template>
-  <div class="loader" v-once>
-    <div class="loader__content">
+<template lang="pug">
+  div.loader(v-once)
 
-      <logoSVG />
+    div.loader__content
+      logoSVG
+      p.loader__tip
+        //- | {{ messages | randomize }}
 
-      <p class="loader__tip">
-        <!-- {{ messages | randomize }} -->
-      </p>
-      <spinner line-fg-color="#ff00ff" line-bg-color="#99999" text-fg-color="#ff00ff" size="small" :message="this.messages|randomize"></spinner>
-
-    </div>
-  </div>
+      //- span.loader__spinner
 </template>
 
 
 
 <script>
 import logoSVG from '@/assets/img/logo.svg'
-import Spinner from 'vue-simple-spinner'
 
 export default {
   name: 'Preloader',
 
-  components: { logoSVG, Spinner },
+  components: { logoSVG },
 
   data () {
     return {
       messages: [
-        // '¡Ya casi está listo!'
+        // '¡Ya casi está listo!',
         // 'Cargando ...',
         // 'Enseguida estará listo ...',
         // 'Frase aleatoria.'
@@ -51,10 +46,16 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/styles/_mixins';
 
+// Simple Vue transition to fade-out the preloader
+.fade-enter-active, .fade-leave-active { transition: opacity .6s ease-out }
+.fade-enter, .fade-leave-to { opacity: 0 }
+
+
+//
 .loader {
   position: fixed;
   z-index: 666;
-  background-color: #fff;
+  background-color: #f5f5f5;
   width: 100%;
   height: 100%;
   top: 0;
@@ -78,9 +79,14 @@ export default {
     // animation: zoomIn .75s;
   }
 
-  &__spinner {
-    display: inline-block;
-  }
+  // &__spinner {
+  //   display: inline-block;
+  //   border: 1px dotted fuchsia;
+  //   border-top: 1px dotted transparent;
+  //   padding: 15px;
+  //   border-radius: 25px;
+  //   animation: rotation 1s linear infinite;
+  // }
 }
 
 
@@ -95,7 +101,26 @@ export default {
 //   }
 // }
 
-// Simple Vue transition to fade-out the preloader
-.fade-enter-active, .fade-leave-active { transition: opacity .6s ease-out }
-.fade-enter, .fade-leave-to { opacity: 0 }
+
+
+// @keyframes rotation {
+//   0% {
+//     border-color: #5C258D;
+//     border-top-color: transparent;
+//     transform: rotate(0deg);
+//   }
+//   25% {
+//     border-color: cyan;
+//     border-top-color: transparent;
+//   }
+//   50% {
+//     border-color: fuchsia;
+//     border-top-color: transparent;
+//   }
+//   100% {
+//     border-color: #4389A2;
+//     border-top-color: transparent;
+//     transform: rotate(359deg);
+//   }
+// }
 </style>

@@ -1,8 +1,8 @@
 <template lang="pug">
   footer
     a(id="show-modal", @click="showModal = !showModal")
-      //- helpSVG
-      <img src="../assets/img/bottle.png" width="20" height="49" alt="click me! (ayuda)"/>
+      //- helpSVG - png
+      img(src="../assets/img/bottle.png" width="20" height="49" alt="[ ? ]")
     Modal(v-if="showModal", @close="showModal = !showModal")
 </template>
 
@@ -32,17 +32,17 @@ export default {
 <style lang="sass" scoped>
 footer
   text-align: center
-  margin: 1rem 0 0 0
+  margin: 1.6rem 0 0 0
   svg, img
     cursor: pointer
-    animation: bottle 1200ms ease-in-out infinite
+    animation: bottle 1800ms ease-in-out infinite
     @media only screen and (min-width: 901px)
       display: none
 
-// Animation
+
 @keyframes bottle
   0%, 100%
     transform: translateY(0)
   50%
-    transform: translateY(-9%)
+    transform: translateY(-10%)
 </style>

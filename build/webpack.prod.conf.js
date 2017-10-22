@@ -72,6 +72,8 @@ const webpackConfig = merge(baseWebpackConfig, {
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
+      title: 'Hate Planet',
+      description: 'Colectivo artístico Hate Planet. ',
       filename: config.build.index,
       template: 'index.html',
       inject: true,
