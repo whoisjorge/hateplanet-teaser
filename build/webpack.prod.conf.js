@@ -9,7 +9,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
-const PreloadWebpackPlugin = require('preload-webpack-plugin')
+var PreloadWebpackPlugin = require('preload-webpack-plugin')
+var ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
 
 const env = config.build.env
 
@@ -33,15 +34,16 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
     // UglifyJs do not support ES6+, you can also use babel-minify for better treeshaking: https://github.com/babel/minify
     new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
       compress: {
-        warnings: false,
-        comparisons: false
+        warnings: false
       },
       output: {
-        comments: false,
-        ascii_only: true
+        comments: false
       },
-      sourceMap: true
+      // extractComments: {
+      //   filename: 'LICENSES'
+      // }
     }),
     // extract css into its own file
     new ExtractTextPlugin({
@@ -52,7 +54,9 @@ const webpackConfig = merge(baseWebpackConfig, {
     new OptimizeCSSPlugin({
       cssProcessorOptions: {
         safe: true,
-        discardComments: { removeAll: true }
+        discardComments: {
+          removeAll: true
+        }
       }
     }),
     // generate dist index.html with correct asset hash for caching.
@@ -66,15 +70,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         collapseWhitespace: true,
         removeAttributeQuotes: true,
         removeComments: true,
-        collapseBooleanAttributes: true,
-        removeEmptyAttributes: true,
-        removeRedundantAttributes: true,
-        useShortDoctype: true,
-        removeStyleLinkTypeAttributes: true,
-        keepClosingSlash: true,
-        minifyJS: true,
-        minifyCSS: true,
-        minifyURLs: true
+        collapseBooleanAttributes: true
         // more options:
         // https://github.com/kangax/html-minifier#options-quick-reference
       },
@@ -85,6 +81,10 @@ const webpackConfig = merge(baseWebpackConfig, {
     new PreloadWebpackPlugin({
       rel: 'preload',
       include: 'all'
+    }),
+    // https://github.com/numical/script-ext-html-webpack-plugin
+    new ScriptExtHtmlWebpackPlugin({
+      defaultAttribute: 'defer'
     }),
     // keep module.id stable when vender modules does not change
     new webpack.HashedModuleIdsPlugin(),
