@@ -27,7 +27,7 @@
                 </g>
             </g>
         </a>
-            <g id="NuestrasRedes" transform="translate(113.000000, 275.000000)" fill="#000000">
+            <g class="exp" id="NuestrasRedes" transform="translate(113.000000, 275.000000)" fill="#000000">
                 <g id="Page-1">
                     <g id="Desktop-Landscape">
                         <g id="Botones">
@@ -52,7 +52,7 @@
                     </g>
                 </g>
             </g>
-            <g id="Mientras" transform="translate(95.000000, 0.000000)" fill="#000000">
+            <g class="exp" id="Mientras" transform="translate(95.000000, 0.000000)" fill="#000000">
                 <g id="Page-1">
                     <g id="Desktop-Landscape">
                         <g id="texto">
