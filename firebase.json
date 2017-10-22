@@ -6,13 +6,6 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    // "redirects": [
-    //   {
-    //     "source" : "http://hateplanet.es",
-    //     "destination" : "http://www.hateplanet.es",
-    //     "type" : 301
-    //   }
-    // ],
     "rewrites": [
       {
         "source": "**",

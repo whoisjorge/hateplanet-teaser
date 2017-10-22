@@ -1,5 +1,6 @@
 dist/
 sketch/
+.github/todo.txt
 
 # Dependencies
 node_modules/
