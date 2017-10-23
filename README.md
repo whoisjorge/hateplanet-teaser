@@ -10,7 +10,7 @@
 
 ## Intro
 
-> Vue / Webpack / Firebase / ... / 💻
+> Vue / Webpack / Firebase / ... 💻
 
 ![100 Scored](.github/100-page-speed.png "100 Google Page Speed")
 🚀 - https://developers.google.com/speed/pagespeed/insights/?hl=es&url=hateplanet.es

@@ -49,9 +49,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       compress: {
         warnings: false
       },
-      output: {
-        comments: false
-      },
+      output: { comments: false },
       // extractComments: {
       //   filename: 'LICENSES'
       // }

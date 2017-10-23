@@ -1,5 +1,5 @@
 <template lang="pug">
-  section#index
+  div#index
     ChicasTeaser
 </template>
 

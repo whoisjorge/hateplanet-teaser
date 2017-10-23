@@ -51,7 +51,6 @@ export default {
 
 
 <style lang="scss">
-
 // Last minute tweaks
 
 #app {
@@ -77,7 +76,7 @@ export default {
 
 
 
-/* Cutre Tween Max beta workingSVG */
+/* Cutre TweenMax beta - workingSVG */
 .fb {
   animation: floating 3s ease-in-out 3s infinite alternate;
 }
