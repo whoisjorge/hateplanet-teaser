@@ -51,6 +51,7 @@ export default {
 
 
 <style lang="scss">
+
 // Last minute tweaks
 
 #app {
@@ -64,7 +65,7 @@ export default {
 }
 
 // Soft lights background effect
-#bgshadow{
+#bgshadow {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -74,26 +75,9 @@ export default {
     background: radial-gradient(at center center, rgba(0, 0, 0, 0) 51%, rgba(0, 0, 0, 0.025) 100%);
 }
 
-// #background {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   z-index: -999;
-//   background-image: url('./assets/img/bg.png');
-//   background-repeat: no-repeat;
-//   background-attachment: fixed;
-//   background-size: cover;
-//   opacity: .27;
-//   filter: alpha(opacity=27);
-// }
 
 
-
-
-
-/* Cutre Tween Max beta */
+/* Cutre Tween Max beta workingSVG */
 .fb {
   animation: floating 3s ease-in-out 3s infinite alternate;
 }

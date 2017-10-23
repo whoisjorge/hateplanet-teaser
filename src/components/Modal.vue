@@ -30,7 +30,7 @@ export default {
 <style lang="sass" scoped>
 .modal-mask
   position: fixed
-  z-index: 9997
+  z-index: 999
   top: 0
   left: 0
   width: 100%
@@ -57,8 +57,7 @@ export default {
 
 /*
  * The following styles are auto-applied to elements with
- * transition="modal" when their visibility is toggled
- * by Vue.js.
+ * transition="modal" when their visibility is toggled.
  */
 .modal-enter
   transition: opacity .5s ease-out
@@ -68,8 +67,9 @@ export default {
   transition: opacity .5s ease-out
   opacity: 0
 
-.modal-enter .modal-container,
-.modal-leave-active .modal-container
-  -webkit-transform: scale(1.1)
-  transform: scale(1.1)
+/*
+ * .modal-enter .modal-wrapper,
+ * .modal-leave-active .modal-wrapper
+ *   transform: scale(2)
+ */
 </style>

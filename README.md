@@ -3,7 +3,7 @@
   <br>
   <h3>Mis odios no son exigentes</h3>
   <br> 🎊 <br>
-  ✨ <b><a href="https://hateplanet.es"><small><i> Visit live teaser website</i></small></a> </b> ✨
+  ✨ <b><a href="https://hateplanet.es"><small><i> Visit live site</i></small></a> </b> ✨
 </div>
 
 <br>

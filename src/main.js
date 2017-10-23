@@ -9,11 +9,9 @@ Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
   router,
-  template: '<App/>',
-  components: { App }
-})
+  ...App
+}).$mount('#app')
 
 /* eslint-disable no-console, no-useless-escape */
 console.log('~ -------------------------------------------- ~')

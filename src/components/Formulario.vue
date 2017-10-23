@@ -1,29 +1,29 @@
 <template lang="pug">
   form(@submit.prevent="submitEmail", v-on-click-outside="close")
 
-      div.form-group(@click.prevent="open")
-        correoSVG
-        input.rainbow(type="email", v-model="newUser.email", v-show="see", :placeholder="placeholder", :disabled="sent", aria-describedby="eTerm" autofocus)
+    div.form-group(@click.prevent="open")
+      CorreoSVG
+      input.rainbow(type="email", v-model="newUser.email", v-show="see", :placeholder="placeholder", :disabled="sent", aria-describedby="eTerm" autofocus)
 
-      div.form-group
-        a(@click.prevent="submitEmail")
-          enviarSVG
 
-        //- very futuristic UX
-        p(v-show="this.invalid")
-          small.invalid(v-show="!validation.email == true && this.sent == false") Introduce una dirección de correo válida.
-        p(v-show="!this.invalid")
-          small.valid(v-show="this.sent == true") Enviado correctamente.
+      a(@click.prevent="submitEmail")
+        EnviarSVG
+      //- Very futuristic UX
+      p(v-show="this.invalid")
+        small.invalid(v-show="!validation.email == true && this.sent == false") Introduce una dirección de correo válida.
+      p(v-show="!this.invalid")
+        small.valid(v-show="this.sent == true") Enviado correctamente.
 
-        small#eTerm.form-text
-          sup (*)
-          |  Tu correo&nbsp;
-          u sólo
-          |  lo utilizaremos para avisarte cuando la web ya no esté en construcción. Y además te enviaremos un
-          b  código
-          |  con el que tendrás los gastos de
-          b  envío gratis
-          |  en tu primera compra.
+
+      small#eTerm
+        sup (*)
+        |  Tu correo&nbsp;
+        u sólo
+        |  lo utilizaremos para avisarte cuando la web ya no esté en construcción. Y además te enviaremos un
+        b  código
+        |  con el que tendrás los gastos de
+        b  envío gratis
+        |  en tu primera compra.
 </template>
 
 
@@ -34,8 +34,8 @@ import Firebase from 'firebase'
 import VueFire from 'vuefire'
 
 import { mixin as onClickOutside } from 'vue-on-click-outside'
-import correoSVG from '@/assets/img/correo.svg'
-import enviarSVG from '@/assets/img/enviar.svg'
+import CorreoSVG from '@/assets/img/correo.svg'
+import EnviarSVG from '@/assets/img/enviar.svg'
 
 Vue.use(VueFire)
 
@@ -48,7 +48,7 @@ var emailRE = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@(
 export default {
   name: 'Formulario',
 
-  components: { correoSVG, enviarSVG },
+  components: { CorreoSVG, EnviarSVG },
 
   data () {
     return {
@@ -113,15 +113,6 @@ export default {
 ::placeholder
   text-align: center
 
-
-.flex-center
-  min-height: 100vh
-  display: flex
-  justify-content: center
-  align-items: center
-  text-align: center
-  flex-direction: column
-
 .form-group
   position: relative
   display: flex
@@ -129,50 +120,47 @@ export default {
   align-items: center
   text-align: center
   flex-direction: column
+
+  // Correo
   > svg
     margin-top: -13px
     cursor: text
+  > input
+    border: none
+    position: absolute
+    top: -6px
+    min-width: 200px
+    height: 26px
+    background: #fff
+    &:focus
+      outline: none
+    /* IE 10+ fix position */
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+      margin: 0 auto
+      left: 0px
+      right: 0px
 
-.form-control
-  display: flex
-  margin: 0 auto
+  // Enviar
+  > a svg
+    cursor: pointer
 
-.form-text
-  display: block
-  max-width: 370px
-  color: #333
-  padding: 1rem
-  b
-   font-weight: 600
+  // Valida't
+  > p
+    margin: 0
+    small
+      &.invalid
+        color: #f04124
+      &.valid
+        color: #41b883
 
-// Introduce Correo
-input
-  border: none
-  position: absolute
-  top: -6px
-  min-width: 200px
-  height: 26px
-  background: white
-  &:focus
-    outline: none
-  /* IE 10+ fix position */
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
-    margin: 0 auto
-    left: 0px
-    right: 0px
+  // Términos
+  > #eTerm
+    display: block
+    max-width: 370px
+    padding: 1rem
+    b
+      font-weight: bold
 
-// Enviar
-a svg
-  cursor: pointer
-
-// Valida't
-p
-  margin: 0
-  small
-    &.invalid
-      color: #f04124
-    &.valid
-      color: #41b883
 </style>
 
 
@@ -183,26 +171,26 @@ p
 :focus::placeholder {
   color: transparent
 }
-a path.bgsvg {
-    transition: fill .666s ease;
+a path.backgroundColor {
+    transition: fill .666s ease
 }
-a:hover path.bgsvg {
+a:hover path.backgroundColor {
   fill: fuchsia!important
 }
 .rainbow:focus {
-animation:rainbow 1.250s infinite;
+  animation:rainbow 1.750s infinite
 }
 @keyframes rainbow {
-  0% {color: fuchsia;}
+  0% {color: #ff0000;}
   10% {color: #ff8000;}
-  20% {color: paleturquoise;}
-  30% {color: #80ff00;}
+  20% {color: #eecd69}
+  30% {color: limegreen;}
   40% {color: #00ff00;}
-  50% {color: cyan;}
-  60% {color: #00ffff;}
+  50% {color: #00ff80;}
+  60% {color: cyan;}
   70% {color: #0080ff;}
   80% {color: #0000ff;}
   90% {color: #8000ff;}
-  100% {color: #ff0080;}
+  100% {color: fuchsia;}
 }
 </style>

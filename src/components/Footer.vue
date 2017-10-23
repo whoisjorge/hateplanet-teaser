@@ -19,7 +19,27 @@ export default {
 
   data: () => ({
     showModal: false
-  })
+  }),
+
+  methods: {
+    // handleResize () {
+    //   console.log(document.documentElement.clientWidth)
+    // }
+  },
+
+  // mounted () {
+  //   window.addEventListener('resize', this.handleResize)
+  // },
+
+  // beforeDestroy () {
+  //   window.removeEventListener('resize', this.handleResize)
+  // }
+
+  beforeMount () {
+    if (document.documentElement.clientWidth < 901) {
+      this.showModal = true
+    }
+  }
 
 }
 </script>

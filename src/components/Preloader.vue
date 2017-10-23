@@ -54,7 +54,7 @@ export default {
 //
 .loader {
   position: fixed;
-  z-index: 666;
+  z-index: 1000;
   background-color: #f5f5f5;
   width: 100%;
   height: 100%;

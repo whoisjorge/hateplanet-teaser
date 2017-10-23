@@ -45,18 +45,20 @@ export default {
   justify-content: center
   align-items: center
   text-align: center
-  // IE vertical center fix
+  /* IE vertical center fix */
   position: absolute
   left: 0
   right: 0
   top: 0
   bottom: 0
+  @media only screen and (max-width: 900px)
+    position: static
 
 .right-flex
   flex: 1 0 0
   flex-direction: column
   @media only screen and (max-width: 480px)
-    margin-top: 3rem
+    margin-top: 30px
 
 .left-flex
   flex: 1 0 0
@@ -64,14 +66,4 @@ export default {
   @media only screen and (max-width: 900px)
     display: none
 
-
-
-// !not
-.flex-center-mobile
-  min-height: 100vh
-  display: flex
-  justify-content: center
-  align-items: center
-  text-align: center
-  flex-direction: column
 </style>

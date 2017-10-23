@@ -15,7 +15,6 @@ export default new Router({
       name: 'Index',
       component: index
     },
-    // Error pages redirect
     {
       path: '*',
       redirect: '/'
