@@ -22,23 +22,25 @@ export default {
   }),
 
   methods: {
-    // handleResize () {
-    //   console.log(document.documentElement.clientWidth)
-    // }
+    handleResize () {
+      if (document.documentElement.clientWidth > 901) {
+        this.showModal = false
+      }
+    }
   },
-
-  // mounted () {
-  //   window.addEventListener('resize', this.handleResize)
-  // },
-
-  // beforeDestroy () {
-  //   window.removeEventListener('resize', this.handleResize)
-  // }
 
   beforeMount () {
     if (document.documentElement.clientWidth < 901) {
       this.showModal = true
     }
+  },
+
+  mounted () {
+    window.addEventListener('resize', this.handleResize)
+  },
+
+  beforeDestroy () {
+    window.removeEventListener('resize', this.handleResize)
   }
 
 }
@@ -55,7 +57,6 @@ footer
     animation: bottle 1800ms ease-in-out infinite
     @media only screen and (min-width: 901px)
       display: none
-
 
 @keyframes bottle
   0%, 100%
