@@ -3,7 +3,7 @@
 
     div.loader__content
       logoSVG
-      p.loader__tip
+      //- p.loader__tip
         //- | {{ messages | randomize }}
 
       //- span.loader__spinner

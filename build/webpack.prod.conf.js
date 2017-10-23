@@ -9,10 +9,11 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
-var PreloadWebpackPlugin = require('preload-webpack-plugin')
-var ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
-var HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
-var PrerenderSpaPlugin = require('prerender-spa-plugin')
+// PageSpeed Quest!
+const PreloadWebpackPlugin = require('preload-webpack-plugin')
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
+const PrerenderSpaPlugin = require('prerender-spa-plugin')
 
 const env = config.build.env
 
@@ -44,6 +45,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // UglifyJs do not support ES6+, you can also use babel-minify for better treeshaking: https://github.com/babel/minify
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
+      parallel: true,
       compress: {
         warnings: false
       },
@@ -72,16 +74,15 @@ const webpackConfig = merge(baseWebpackConfig, {
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
-      title: 'Hate Planet',
-      description: 'Colectivo artístico Hate Planet. ',
       filename: config.build.index,
+      title: 'Hate Planet',
+      description: 'Colectivo artístico Hate Planet.',
       template: 'index.html',
       inject: true,
       minify: {
-        collapseWhitespace: true,
-        removeAttributeQuotes: true,
         removeComments: true,
-        collapseBooleanAttributes: true
+        collapseWhitespace: true,
+        removeAttributeQuotes: true
         // more options:
         // https://github.com/kangax/html-minifier#options-quick-reference
       },
