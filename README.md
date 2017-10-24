@@ -12,8 +12,13 @@
 
 > Vue / Webpack / Firebase / ... 💻
 
-![100 Scored](.github/100-page-speed.png "100 Google Page Speed")
-🚀 - https://developers.google.com/speed/pagespeed/insights/?hl=es&url=hateplanet.es
+<br>
+<details>
+  <summary>Scored 100/100 with the Google PageSpeed Tool</summary>
+  <img src=".github/100-page-speed.png" alt="100 Google Page Speed"/>
+  🚀 <a href="https://developers.google.com/speed/pagespeed/insights/?hl=es&url=https%3A%2F%2Fwww.hateplanet.es%2F">Check it out</a>
+</details>
+<br>
 
 
 ## Install
@@ -31,9 +36,10 @@ npm install
 npm start
 ```
 
+
 ## Contributing
 
-Feel free to dive in, all your contributions are always welcome! [Open an issue](https://github.com/whoisjorge/hateplanet-teaser/issues/new) or submit PRs. Don't be afraid to do whatever as they come to mind 👌
+Thank you for considering contributing to this repository! Feel free to dive in, all your contributions are always welcome. Open a new [issue](https://github.com/whoisjorge/hateplanet-teaser/issues/new) or just submit PRs. Don't be afraid to do whatever as they come to mind 👌
 
 
 
