@@ -1,5 +1,5 @@
 <div align="center">
-  <img src ="static/social.png"/>
+  <img src ="./static/social.png"/>
   <br>
   <h3>Mis odios no son exigentes</h3>
   <br> 🎊 <br>
@@ -14,9 +14,9 @@
 
 <br>
 <details>
-  <summary>Scored 100/100 with the Google PageSpeed Tool</summary>
+  <summary>100/100 - Google PageSpeed Tool</summary>
   <img src=".github/100-page-speed.png" alt="100 Google Page Speed"/>
-  🚀 <a href="https://developers.google.com/speed/pagespeed/insights/?hl=es&url=https%3A%2F%2Fwww.hateplanet.es%2F">Check it out</a>
+  🚀 <a href="https://developers.google.com/speed/pagespeed/insights/?hl=es&url=hateplanet.es">Check it out!</a>
 </details>
 <br>
 
