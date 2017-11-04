@@ -10,13 +10,13 @@
 
 ## Intro
 
-> Vue / Webpack / Firebase / ... 💻
+> Vue / Webpack / Firebase / ... 💻 ☕
 
 <br>
 <details>
   <summary>100/100 - Google PageSpeed Tool</summary>
   <img src=".github/100-page-speed.png" alt="100 Google Page Speed"/>
-  🚀 <a href="https://developers.google.com/speed/pagespeed/insights/?hl=es&url=hateplanet.es">Check it out!</a>
+  🚀
 </details>
 <br>
 
