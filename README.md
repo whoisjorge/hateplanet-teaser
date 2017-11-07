@@ -16,7 +16,7 @@
 <details>
   <summary>100/100 - Google PageSpeed Tool</summary>
   <img src=".github/100-page-speed.png" alt="100 Google Page Speed"/>
-  🚀
+  🚀 (sin analytics)
 </details>
 <br>
 

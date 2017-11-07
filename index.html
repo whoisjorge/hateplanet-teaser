@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="es" prefix="og: http://ogp.me/ns#">
-  <head>
+<html lang="es">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
     <link rel="preconnect" href="//fonts.gstatic.com/" crossorigin>
 
     <title>:: Hate Planet - Teaser ::</title>
@@ -13,14 +13,14 @@
     <!--[if IE]><link rel="icon" type="image/x-icon" href="static/favicon.ico"/><![endif]-->
     <link rel="shortcut icon" type="image/png" href="static/favicon.png"/>
 
-    <!-- Social meta -->
+    <!-- ogp -->
     <meta property="og:site_name" content="<%= htmlWebpackPlugin.options.title %>"/>
     <meta property="og:title" content="<%= htmlWebpackPlugin.options.title %>"/>
     <meta property="og:description" content="<%= htmlWebpackPlugin.options.description %>"/>
     <meta property="og:url" content="https://hateplanet.es"/>
     <meta property="og:type" content="website"/>
     <meta property="og:image" content="https://hateplanet.es/static/social.png"/>
-
+    <!-- twitter card -->
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name=twitter:title content="<%= htmlWebpackPlugin.options.title %>"/>
     <meta name=twitter:description content="<%= htmlWebpackPlugin.options.description %>"/>

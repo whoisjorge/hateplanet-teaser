@@ -8,10 +8,14 @@ import App from './App'
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-new Vue({
+const root = new Vue({
   router,
   ...App
-}).$mount('#app')
+})
+
+document.addEventListener('DOMContentLoaded', function () {
+  root.$mount('#app')
+})
 
 /* eslint-disable no-console, no-useless-escape */
 console.log('~ -------------------------------------------- ~')
