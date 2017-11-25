@@ -16,7 +16,7 @@
 <details>
   <summary>100/100 - Google PageSpeed Tool</summary>
   <img src=".github/100-page-speed.png" alt="100 Google Page Speed"/>
-  🚀 (sin analytics)
+  🚀 (no analytics)
 </details>
 <br>
 
@@ -39,7 +39,7 @@ npm start
 
 ## Contributing
 
-Thank you for considering contributing to this repository! Feel free to dive in, all your contributions are always welcome. Open a new [issue](https://github.com/whoisjorge/hateplanet-teaser/issues/new) or just submit PRs. Don't be afraid to do whatever as they come to mind 👌
+Thank you for considering contributing to this repository! Feel free to dive in, all your contributions are always welcome. Open a new [issue](https://github.com/whoisjorge/hateplanet-teaser/issues/new) or just submit PRs. Don't be afraid to say whatever comes to mind 👌
 
 
 
