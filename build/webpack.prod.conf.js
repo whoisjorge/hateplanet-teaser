@@ -1,4 +1,5 @@
 'use strict'
+
 const path = require('path')
 const utils = require('./utils')
 const webpack = require('webpack')
@@ -9,14 +10,23 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
-// PageSpeed Quest!
-const PreloadWebpackPlugin = require('preload-webpack-plugin')
-const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
-const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
+
+/*
+ * PageSpeed Quest!
+ */
+
+// Prerenders static HTML in a single-page application.
 const PrerenderSpaPlugin = require('prerender-spa-plugin')
+// Automatically wiring up asynchronous (and other types) of JavaScript chunks using <link rel='preload'>.
+const PreloadWebpackPlugin = require('preload-webpack-plugin')
+// Enhances html-webpack-plugin functionality with different deployment options for the scripts
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
+// An extension plugin for the `html-webpack-plugin` that allows to embed javascript and css source inline.
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
 
+
+// Configuration
 const env = config.build.env
-
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({
@@ -31,6 +41,10 @@ const webpackConfig = merge(baseWebpackConfig, {
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
   plugins: [
+    // http://vuejs.github.io/vue-loader/en/workflow/production.html
+    new webpack.DefinePlugin({
+      'process.env': env
+    }),
     // https://www.npmjs.com/package/prerender-spa-plugin
     new PrerenderSpaPlugin(
       // Absolute path to compiled SPA
@@ -38,10 +52,6 @@ const webpackConfig = merge(baseWebpackConfig, {
       // List of routes to prerender
       [ '/' ]
     ),
-    // http://vuejs.github.io/vue-loader/en/workflow/production.html
-    new webpack.DefinePlugin({
-      'process.env': env
-    }),
     // UglifyJs do not support ES6+, you can also use babel-minify for better treeshaking: https://github.com/babel/minify
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
