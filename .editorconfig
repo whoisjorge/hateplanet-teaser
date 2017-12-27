@@ -1,6 +1,3 @@
-# For more information about the configurations used
-# in this file, please see the EditorConfig documentation:
-#
 # http://editorconfig.org
 
 root = true
@@ -14,3 +11,7 @@ indent_size = 2
 end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
+
+[*.md]
+max_line_length = off
+trim_trailing_whitespace = false

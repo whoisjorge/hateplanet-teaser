@@ -1,58 +1,37 @@
 <template lang="pug">
-  main#app
-
-    //- Preloader
+  div#app
+    //- Preloader <---------------
     transition(name="fade")
-      template(v-if="preloading")
-        Preloader
-    //----------------------------
+      Preloader(v-if="preloading")
 
+    //-
     router-view
+
 
     div#bgshadow
 </template>
 
 
-
 <script>
-import Preloader from '@/components/Preloader'
+  import Preloader from '@/components/Preloader'
 
-export default {
-  name: 'App',
+  export default {
+    name: 'App',
 
-  data () {
-    return {
+    data: () => ({
       preloading: true
+    }),
+
+    components: {
+      Preloader
     }
-  },
 
-  components: {
-    Preloader
-  },
-
-  methods: {
-    fadePreloader () {
-      const app = this
-      setTimeout(() => {
-        app.preloading = false
-      }, 2500)
-    },
-    boot () {
-      this.fadePreloader()
-    }
-  },
-
-  mounted () {
-    this.boot()
   }
-}
 </script>
-
 
 
 <style lang="scss">
 // Last minute tweaks
-
 #app {
   -webkit-tap-highlight-color: transparent;
   button, img, svg {
@@ -76,7 +55,7 @@ export default {
 
 
 
-/* Cutre TweenMax beta - workingSVG */
+/* Cutre TweenMax style... beta -> workingSVG */
 .fb {
   animation: floating 3s ease-in-out 3s infinite alternate;
 }

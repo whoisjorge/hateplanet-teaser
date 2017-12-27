@@ -28,8 +28,8 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
-      title: 'Hate Planet',
-      description: 'Colectivo artístico Hate Planet. ',
+      title: 'Hate Planet - Colectivo Artístico',
+      description: 'Hate Planet es un espacio de reflexión que busca la forma de denunciar el uso sexista, excesivo y normativo del cuerpo de la mujer. Para ello utilizamos diferentes técnicas de estampación (serigrafía y xilografía) sobre diferentes soportes, trabajando en la repetición de imágenes que ayuden a romper los tabúes que lo envuelven.',
       filename: 'index.html',
       template: 'index.html',
       inject: true

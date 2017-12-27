@@ -1,10 +1,10 @@
 <template lang="pug">
-  div.loader(v-once)
+  div.loader
 
     div.loader__content
       logoSVG
       //- p.loader__tip
-        //- | {{ messages | randomize }}
+      //-   | {{ messages | randomize }}
 
       //- span.loader__spinner
 </template>
@@ -19,16 +19,11 @@ export default {
 
   components: { logoSVG },
 
-  data () {
-    return {
-      messages: [
-        // '¡Ya casi está listo!',
-        // 'Cargando ...',
-        // 'Enseguida estará listo ...',
-        // 'Frase aleatoria.'
-      ]
-    }
-  },
+  data: () => ({
+    messages: [
+      // 'Mis odios no son exigentes',
+    ]
+  }),
 
   filters: {
     randomize (messages) {
@@ -36,6 +31,16 @@ export default {
       const randomMessage = Math.floor(Math.random() * messages.length)
       return messages[randomMessage]
     }
+  },
+
+  mounted () {
+    setTimeout(() => {
+      this.$destroy()
+    }, 2500)
+  },
+
+  beforeDestroy () {
+    this.$parent.preloading = false
   }
 
 }
@@ -44,7 +49,7 @@ export default {
 
 
 <style lang="scss" scoped>
-@import '../assets/styles/_mixins';
+@import '../styles/_mixins';
 
 // Simple Vue transition to fade-out the preloader
 .fade-enter-active, .fade-leave-active { transition: opacity .6s ease-out }
@@ -81,8 +86,8 @@ export default {
 
   // &__spinner {
   //   display: inline-block;
-  //   border: 1px dotted fuchsia;
-  //   border-top: 1px dotted transparent;
+  //   border: 1px solid fuchsia;
+  //   border-top: 1px normal transparent;
   //   padding: 15px;
   //   border-radius: 25px;
   //   animation: rotation 1s linear infinite;
@@ -90,7 +95,7 @@ export default {
 }
 
 
-// __tip animation
+// &__tip animation
 // @keyframes zoomIn {
 //   from {
 //     opacity: 0;
@@ -100,8 +105,6 @@ export default {
 //     opacity: 1;
 //   }
 // }
-
-
 
 // @keyframes rotation {
 //   0% {

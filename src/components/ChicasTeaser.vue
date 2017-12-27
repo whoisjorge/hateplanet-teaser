@@ -12,30 +12,29 @@
 </template>
 
 
-
 <script>
-import workingSVG from '@/assets/img/workingSVG.svg'
-import nosotrasSVG from '@/assets/img/chicash.svg'
-import Formulario from '@/components/Formulario'
-import appFooter from '@/components/Footer'
+  import workingSVG from '@/assets/img/workingSVG.svg'
 
-export default {
-  name: 'ChicasTeaser',
+  import nosotrasSVG from '@/assets/img/chicash.svg'
+  import Formulario from '@/components/Formulario'
+  import appFooter from '@/components/Footer'
 
-  components: {
-    workingSVG,
-    nosotrasSVG,
-    Formulario,
-    appFooter
+  export default {
+    name: 'ChicasTeaser',
+
+    components: {
+      workingSVG,
+      nosotrasSVG,
+      Formulario,
+      appFooter
+    }
+
   }
-
-}
 </script>
 
 
-
 <style lang="sass" scoped>
-@import '../assets/styles/_mixins'
+@import '../styles/_mixins'
 
 #ChicasTeaser
   min-height: 100vh
@@ -54,16 +53,15 @@ export default {
   @media only screen and (max-width: 900px)
     position: static
 
-.right-flex
-  flex: 1 0 0
-  flex-direction: column
-  @media only screen and (max-width: 900px)
-    margin-top: 30px
+  > .right-flex
+    flex: 1 0 0
+    flex-direction: column
+    @media only screen and (max-width: 900px)
+      margin-top: 30px
 
-.left-flex
-  flex: 1 0 0
-  // padding-left: 70px
-  @media only screen and (max-width: 900px)
-    display: none
-
+  > .left-flex
+    flex: 1 0 0
+    // padding-left: 70px
+    @media only screen and (max-width: 900px)
+      display: none
 </style>

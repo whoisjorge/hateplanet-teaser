@@ -6,61 +6,59 @@
 </template>
 
 
-
 <script>
-import Modal from '@/components/Modal'
+  import Modal from '@/components/Modal'
 
-export default {
-  name: 'Footer',
+  export default {
+    name: 'Footer',
 
-  components: {
-    Modal
-  },
+    components: { Modal },
 
-  data: () => ({
-    showModal: false
-  }),
+    data: () => ({
+      showModal: false
+    }),
 
-  methods: {
-    handleResize () {
-      if (document.documentElement.clientWidth > 901) {
-        this.showModal = false
+    methods: {
+      handleResize () {
+        if (document.documentElement.clientWidth > 901) {
+          this.showModal = false
+        }
       }
+    },
+
+    beforeMount () {
+      if (document.documentElement.clientWidth < 901) {
+        this.showModal = true
+      }
+    },
+
+    mounted () {
+      window.addEventListener('resize', this.handleResize)
+    },
+
+    beforeDestroy () {
+      window.removeEventListener('resize', this.handleResize)
     }
-  },
 
-  beforeMount () {
-    if (document.documentElement.clientWidth < 901) {
-      this.showModal = true
-    }
-  },
-
-  mounted () {
-    window.addEventListener('resize', this.handleResize)
-  },
-
-  beforeDestroy () {
-    window.removeEventListener('resize', this.handleResize)
   }
-
-}
 </script>
 
 
-
 <style lang="sass" scoped>
-footer
-  text-align: center
-  margin: 1.6rem 0 0 0
-  svg, img
-    cursor: pointer
-    animation: bottle 1800ms ease-in-out infinite
-    @media only screen and (min-width: 901px)
-      display: none
+  footer
+    text-align: center
+    margin: 1.6rem 0 0 0
 
-@keyframes bottle
-  0%, 100%
-    transform: translateY(0)
-  50%
-    transform: translateY(-10%)
+    > svg, img
+      cursor: pointer
+      animation: bottle 1800ms ease-in-out infinite
+      @media only screen and (min-width: 901px)
+        display: none
+
+  // Animation
+  @keyframes bottle
+    0%, 100%
+      transform: translateY(0)
+    50%
+      transform: translateY(-10%)
 </style>

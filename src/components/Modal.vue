@@ -1,7 +1,7 @@
 <template lang="pug">
   transition(name="modal")
     div.modal-mask
-      main.modal-wrapper
+      div.modal-wrapper
         //- Close
         a.close(@click="$emit('close')")
           CloseSVG
@@ -12,19 +12,14 @@
 
 
 <script>
-import workingSVG from '@/assets/img/workingSVG.svg'
-import CloseSVG from '@/assets/img/close.svg'
+  import workingSVG from '@/assets/img/workingSVG.svg'
+  import CloseSVG from '@/assets/img/close.svg'
 
-export default {
-  name: 'Modal',
-
-  components: {
-    workingSVG, CloseSVG
+  export default {
+    name: 'Modal',
+    components: { workingSVG, CloseSVG }
   }
-
-}
 </script>
-
 
 
 <style lang="sass" scoped>
@@ -38,22 +33,22 @@ export default {
   background-color: rgba(255, 255, 255, .95)
   transition: opacity .3s ease
 
-.modal-wrapper
-  min-height: 100vh
-  display: flex
-  justify-content: center
-  align-items: center
-  text-align: center
-  flex-direction: column
+  > .modal-wrapper
+    min-height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+    flex-direction: column
 
-.close
-  cursor: pointer
-  display: block
-  position: fixed
-  top: 1rem
-  right: 1.5rem
-  &:focus
-    display: none
+    > .close
+      cursor: pointer
+      display: block
+      position: fixed
+      top: 1rem
+      right: 1.5rem
+      &:focus
+        display: none
 
 /*
  * The following styles are auto-applied to elements with
@@ -67,9 +62,8 @@ export default {
   transition: opacity .5s ease-out
   opacity: 0
 
-/*
- * .modal-enter .modal-wrapper,
- * .modal-leave-active .modal-wrapper
- *   transform: scale(2)
- */
+
+// .modal-enter .modal-wrapper,
+// .modal-leave-active .modal-wrapper
+//   transform: scale(2)
 </style>
