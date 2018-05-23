@@ -1,5 +1,2 @@
-// https://eslint.org/docs/user-guide/configuring#ignoring-files-and-directories
-// Dependencies are ignored by default
-
 build/*.js
 config/*.js
