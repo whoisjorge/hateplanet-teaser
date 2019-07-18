@@ -1,0 +1,35 @@
+/*  Sass Mixins
+ * ------------------------------------------------------------ */
+
+@mixin font-smoothing($value: antialiased)
+  @if $value == antialiased
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+  @else
+    -webkit-font-smoothing: subpixel-antialiased
+    -moz-osx-font-smoothing: auto
+
+
+
+//-------------- Responsiveness
+$size-xs: 480px
+$size-sm: 600px
+$size-md: 840px
+$size-lg: 960px
+$size-xl: 1280px
+//----------------------------------------------------------------------
+@mixin mobile
+  @media only screen and (max-width: $size-xs)
+    @content
+
+@mixin tablet
+  @media only screen and (min-width: $size-xs) and (max-width: $size-md)
+    @content
+
+@mixin desktop
+  @media only screen and (min-width: $size-md) and (max-width: $size-xl)
+    @content
+
+@mixin large
+  @media only screen and (mix-width: $size-2x)
+    @content
