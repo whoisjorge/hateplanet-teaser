@@ -1,27 +1,14 @@
 {
-  "private": true,
   "name": "hateplanet-teaser",
-  "version": "1.0.1",
-  "description": "A front-end teaser web application made for the artistic collective Hate Planet",
-  "homepage": "https://hateplanet.es",
-  "keywords": [
-    "Hate",
-    "X",
-    "Planet"
-  ],
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
-    "start": "npm run dev",
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src",
-    "clean": "rimraf dist/ package-lock.json",
+    "clean": "rimraf dist/ yarn.lock",
     "deploy": "firebase deploy"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/whoisjorge/hateplanet-teaser.git"
-  },
-  "author": "Jorge Moliner <email@whoisjorge.me>",
   "dependencies": {
     "firebase": "^4.5.2",
     "vue": "^2.5.2",
@@ -84,14 +71,14 @@
     "webpack-hot-middleware": "^2.18.2",
     "webpack-merge": "^4.1.0"
   },
-  "engines": {
-    "node": ">= 4.0.0",
-    "npm": ">= 3.0.0"
-  },
   "browserslist": [
     "> 1%",
     "last 4 versions",
     "Firefox ESR",
     "not ie <= 8"
-  ]
+  ],
+  "engines": {
+    "node": ">=8.11.2",
+    "npm": ">= 5.6.0"
+  }
 }
